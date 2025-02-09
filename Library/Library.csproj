@@ -1,0 +1,593 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A02D437C-C5F5-448D-8987-1D8D59A28BBC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Library</RootNamespace>
+    <AssemblyName>Library</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.7.100.14\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SecurityToken, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.SecurityToken.3.7.100.14\lib\net45\AWSSDK.SecurityToken.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.6.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.6.1\lib\net471\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.28.0.0, Culture=neutral, PublicKeyToken=94992a530f44e321, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.28.0\lib\net472\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.28.0.0, Culture=neutral, PublicKeyToken=94992a530f44e321, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.28.0\lib\net472\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.28.0.0, Culture=neutral, PublicKeyToken=94992a530f44e321, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.28.0\lib\net472\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.11.0.0, Culture=neutral, PublicKeyToken=94992a530f44e321, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Libmongocrypt.1.11.0\lib\net472\MongoDB.Libmongocrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=111.3.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.111.3.0\lib\net48\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.30.1\lib\net461\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Snappier, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a1b25124e6e13a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Snappier.1.0.0\lib\netstandard2.0\Snappier.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.3\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="ZstdSharp, Version=0.7.3.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.7.3\lib\net461\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Library.mdf" />
+    <Content Include="App_Data\Library_log.ldf">
+      <DependentUpon>Library.mdf</DependentUpon>
+    </Content>
+    <Content Include="assets\avatars\face-1.jpg" />
+    <Content Include="assets\avatars\face-2.jpg" />
+    <Content Include="assets\avatars\face-3.jpg" />
+    <Content Include="assets\avatars\face-4.jpg" />
+    <Content Include="assets\avatars\face-5.jpg" />
+    <Content Include="assets\avatars\face-6.jpg" />
+    <Content Include="assets\avatars\face-7.jpg" />
+    <Content Include="assets\avatars\face-8.jpg" />
+    <Content Include="assets\images\logo.svg" />
+    <Content Include="assets\images\qrcode.svg" />
+    <Content Include="assets\products\p1.jpg" />
+    <Content Include="assets\products\p2.jpg" />
+    <Content Include="assets\products\p3.jpg" />
+    <Content Include="assets\products\p4.jpg" />
+    <Content Include="Cities.aspx" />
+    <Content Include="css\apexcharts.css" />
+    <Content Include="css\app-dark.css" />
+    <Content Include="css\app-light.css" />
+    <Content Include="css\app-rtl.css" />
+    <Content Include="css\bootstrap-datepicker.css" />
+    <Content Include="css\dataTables.bootstrap4.css" />
+    <Content Include="css\daterangepicker.css" />
+    <Content Include="css\dropzone.css" />
+    <Content Include="css\dropzone.min.css" />
+    <Content Include="css\feather.css" />
+    <Content Include="css\fullcalendar.css" />
+    <Content Include="css\jquery.steps.css" />
+    <Content Include="css\jquery.timepicker.css" />
+    <Content Include="css\perfect-scrollbar.css" />
+    <Content Include="css\quill.snow.css" />
+    <Content Include="css\select2-bootstrap4.css" />
+    <Content Include="css\select2.css" />
+    <Content Include="css\simplebar.css" />
+    <Content Include="css\uppy.min.css" />
+    <Content Include="fonts\feather.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="js\apexcharts.custom.js" />
+    <Content Include="js\apexcharts.min.js" />
+    <Content Include="js\apps.js" />
+    <Content Include="js\bootstrap-datepicker.min.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\Chart.min.js" />
+    <Content Include="js\config.js" />
+    <Content Include="js\d3.min.js" />
+    <Content Include="js\datamaps-zoomto.js" />
+    <Content Include="js\datamaps.all.min.js" />
+    <Content Include="js\datamaps.custom.js" />
+    <Content Include="js\dataTables.bootstrap4.min.js" />
+    <Content Include="js\daterangepicker.js" />
+    <Content Include="js\dropzone.min.js" />
+    <Content Include="js\fullcalendar.custom.js" />
+    <Content Include="js\fullcalendar.js" />
+    <Content Include="js\gauge.min.js" />
+    <Content Include="js\jquery.dataTables.min.js" />
+    <Content Include="js\jquery.mask.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.sparkline.min.js" />
+    <Content Include="js\jquery.steps.min.js" />
+    <Content Include="js\jquery.stickOnScroll.js" />
+    <Content Include="js\jquery.timepicker.js" />
+    <Content Include="js\jquery.validate.min.js" />
+    <Content Include="js\moment.min.js" />
+    <Content Include="js\perfect-scrollbar.min.js" />
+    <Content Include="js\popper.min.js" />
+    <Content Include="js\quill.min.js" />
+    <Content Include="js\select2.min.js" />
+    <Content Include="js\simplebar.min.js" />
+    <Content Include="js\tinycolor-min.js" />
+    <Content Include="js\topojson.min.js" />
+    <Content Include="js\uppy.min.js" />
+    <Content Include="LibraryAdmin\AddBook.aspx" />
+    <Content Include="LibraryAdmin\AddBorrow.aspx" />
+    <Content Include="LibraryAdmin\AddSupplier.aspx" />
+    <Content Include="LibraryAdmin\assets\avatars\face-1.jpg" />
+    <Content Include="LibraryAdmin\assets\avatars\face-2.jpg" />
+    <Content Include="LibraryAdmin\assets\avatars\face-3.jpg" />
+    <Content Include="LibraryAdmin\assets\avatars\face-4.jpg" />
+    <Content Include="LibraryAdmin\assets\avatars\face-5.jpg" />
+    <Content Include="LibraryAdmin\assets\avatars\face-6.jpg" />
+    <Content Include="LibraryAdmin\assets\avatars\face-7.jpg" />
+    <Content Include="LibraryAdmin\assets\avatars\face-8.jpg" />
+    <Content Include="LibraryAdmin\assets\images\logo.svg" />
+    <Content Include="LibraryAdmin\assets\images\qrcode.svg" />
+    <Content Include="LibraryAdmin\assets\products\p1.jpg" />
+    <Content Include="LibraryAdmin\assets\products\p2.jpg" />
+    <Content Include="LibraryAdmin\assets\products\p3.jpg" />
+    <Content Include="LibraryAdmin\assets\products\p4.jpg" />
+    <Content Include="LibraryAdmin\auth-confirm.html" />
+    <Content Include="LibraryAdmin\auth-login-half.html" />
+    <Content Include="LibraryAdmin\auth-login.html" />
+    <Content Include="LibraryAdmin\auth-register.html" />
+    <Content Include="LibraryAdmin\auth-resetpw.html" />
+    <Content Include="LibraryAdmin\ListBook.aspx" />
+    <Content Include="LibraryAdmin\ListBorrow.aspx" />
+    <Content Include="LibraryAdmin\ListSupplier.aspx" />
+    <Content Include="LibraryAdmin\UserAdd.aspx" />
+    <Content Include="LibraryAdmin\UserList.aspx" />
+    <Content Include="LibraryAdmin\calendar.html" />
+    <Content Include="LibraryAdmin\chart-apexcharts.html" />
+    <Content Include="LibraryAdmin\chart-chartjs.html" />
+    <Content Include="LibraryAdmin\chart-inline.html" />
+    <Content Include="LibraryAdmin\contacts-grid.html" />
+    <Content Include="LibraryAdmin\contacts-list.html" />
+    <Content Include="LibraryAdmin\contacts-new.html" />
+    <Content Include="LibraryAdmin\css\apexcharts.css" />
+    <Content Include="LibraryAdmin\css\app-dark.css" />
+    <Content Include="LibraryAdmin\css\app-light.css" />
+    <Content Include="LibraryAdmin\css\app-rtl.css" />
+    <Content Include="LibraryAdmin\css\bootstrap-datepicker.css" />
+    <Content Include="LibraryAdmin\css\dataTables.bootstrap4.css" />
+    <Content Include="LibraryAdmin\css\daterangepicker.css" />
+    <Content Include="LibraryAdmin\css\dropzone.css" />
+    <Content Include="LibraryAdmin\css\dropzone.min.css" />
+    <Content Include="LibraryAdmin\css\feather.css" />
+    <Content Include="LibraryAdmin\css\fullcalendar.css" />
+    <Content Include="LibraryAdmin\css\jquery.steps.css" />
+    <Content Include="LibraryAdmin\css\jquery.timepicker.css" />
+    <Content Include="LibraryAdmin\css\perfect-scrollbar.css" />
+    <Content Include="LibraryAdmin\css\quill.snow.css" />
+    <Content Include="LibraryAdmin\css\select2-bootstrap4.css" />
+    <Content Include="LibraryAdmin\css\select2.css" />
+    <Content Include="LibraryAdmin\css\simplebar.css" />
+    <Content Include="LibraryAdmin\css\uppy.min.css" />
+    <Content Include="LibraryAdmin\dashboard-analytics.html" />
+    <Content Include="LibraryAdmin\dashboard-saas.html" />
+    <Content Include="LibraryAdmin\dashboard-sales.html" />
+    <Content Include="LibraryAdmin\dashboard-system.html" />
+    <Content Include="LibraryAdmin\datamaps.html" />
+    <Content Include="LibraryAdmin\Default.aspx" />
+    <Content Include="LibraryAdmin\files-grid.html" />
+    <Content Include="LibraryAdmin\files-list.html" />
+    <Content Include="LibraryAdmin\fonts\feather.svg" />
+    <Content Include="LibraryAdmin\form_advanced.html" />
+    <Content Include="LibraryAdmin\form_elements.html" />
+    <Content Include="LibraryAdmin\form_layouts.html" />
+    <Content Include="LibraryAdmin\form_upload.html" />
+    <Content Include="LibraryAdmin\form_validation.html" />
+    <Content Include="LibraryAdmin\form_wizard.html" />
+    <Content Include="LibraryAdmin\index-boxed.html" />
+    <Content Include="LibraryAdmin\index-horizontal.html" />
+    <Content Include="LibraryAdmin\index-vertical.html" />
+    <Content Include="LibraryAdmin\index.html" />
+    <Content Include="LibraryAdmin\js\apexcharts.custom.js" />
+    <Content Include="LibraryAdmin\js\apexcharts.min.js" />
+    <Content Include="LibraryAdmin\js\apps.js" />
+    <Content Include="LibraryAdmin\js\bootstrap-datepicker.min.js" />
+    <Content Include="LibraryAdmin\js\bootstrap.min.js" />
+    <Content Include="LibraryAdmin\js\Chart.min.js" />
+    <Content Include="LibraryAdmin\js\config.js" />
+    <Content Include="LibraryAdmin\js\d3.min.js" />
+    <Content Include="LibraryAdmin\js\datamaps-zoomto.js" />
+    <Content Include="LibraryAdmin\js\datamaps.all.min.js" />
+    <Content Include="LibraryAdmin\js\datamaps.custom.js" />
+    <Content Include="LibraryAdmin\js\dataTables.bootstrap4.min.js" />
+    <Content Include="LibraryAdmin\js\daterangepicker.js" />
+    <Content Include="LibraryAdmin\js\dropzone.min.js" />
+    <Content Include="LibraryAdmin\js\fullcalendar.custom.js" />
+    <Content Include="LibraryAdmin\js\fullcalendar.js" />
+    <Content Include="LibraryAdmin\js\gauge.min.js" />
+    <Content Include="LibraryAdmin\js\jquery.dataTables.min.js" />
+    <Content Include="LibraryAdmin\js\jquery.mask.min.js" />
+    <Content Include="LibraryAdmin\js\jquery.min.js" />
+    <Content Include="LibraryAdmin\js\jquery.sparkline.min.js" />
+    <Content Include="LibraryAdmin\js\jquery.steps.min.js" />
+    <Content Include="LibraryAdmin\js\jquery.stickOnScroll.js" />
+    <Content Include="LibraryAdmin\js\jquery.timepicker.js" />
+    <Content Include="LibraryAdmin\js\jquery.validate.min.js" />
+    <Content Include="LibraryAdmin\js\moment.min.js" />
+    <Content Include="LibraryAdmin\js\perfect-scrollbar.min.js" />
+    <Content Include="LibraryAdmin\js\popper.min.js" />
+    <Content Include="LibraryAdmin\js\quill.min.js" />
+    <Content Include="LibraryAdmin\js\select2.min.js" />
+    <Content Include="LibraryAdmin\js\simplebar.min.js" />
+    <Content Include="LibraryAdmin\js\tinycolor-min.js" />
+    <Content Include="LibraryAdmin\js\topojson.min.js" />
+    <Content Include="LibraryAdmin\js\uppy.min.js" />
+    <Content Include="LibraryAdmin\page-404.html" />
+    <Content Include="LibraryAdmin\page-500.html" />
+    <Content Include="LibraryAdmin\page-blank.html" />
+    <Content Include="LibraryAdmin\page-invoice.html" />
+    <Content Include="LibraryAdmin\page-orders.html" />
+    <Content Include="LibraryAdmin\page-timeline.html" />
+    <Content Include="LibraryAdmin\profile-notification.html" />
+    <Content Include="LibraryAdmin\profile-security.html" />
+    <Content Include="LibraryAdmin\profile-settings.html" />
+    <Content Include="LibraryAdmin\profile.html" />
+    <Content Include="LibraryAdmin\support-center.html" />
+    <Content Include="LibraryAdmin\support-faqs.html" />
+    <Content Include="LibraryAdmin\support-ticket-detail.html" />
+    <Content Include="LibraryAdmin\support-tickets.html" />
+    <Content Include="LibraryAdmin\table_advanced.html" />
+    <Content Include="LibraryAdmin\table_basic.html" />
+    <Content Include="LibraryAdmin\table_datatables.html" />
+    <Content Include="LibraryAdmin\ui-buttons.html" />
+    <Content Include="LibraryAdmin\ui-color.html" />
+    <Content Include="LibraryAdmin\ui-icons.html" />
+    <Content Include="LibraryAdmin\ui-modals.html" />
+    <Content Include="LibraryAdmin\ui-notification.html" />
+    <Content Include="LibraryAdmin\ui-progress.html" />
+    <Content Include="LibraryAdmin\ui-tabs-accordion.html" />
+    <Content Include="LibraryAdmin\ui-typograpy.html" />
+    <Content Include="LibraryAdmin\widgets.html" />
+    <Content Include="LogIn.aspx" />
+    <Content Include="LogOut.aspx" />
+    <Content Include="Mongo.aspx" />
+    <Content Include="mongocrypt.dll" />
+    <Content Include="Register.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\BLL\Book.cs" />
+    <Compile Include="App_Code\BLL\Borrow.cs" />
+    <Compile Include="App_Code\BLL\DbLogs.cs" />
+    <Compile Include="App_Code\BLL\Supplier.cs" />
+    <Compile Include="App_Code\BLL\User.cs" />
+    <Compile Include="App_Code\DAL\BookDAL.cs" />
+    <Compile Include="App_Code\DAL\BorrowDAL.cs" />
+    <Compile Include="App_Code\DAL\DbLogsDAL.cs" />
+    <Compile Include="App_Code\DAL\SupplierDAL.cs" />
+    <Compile Include="App_Code\DAL\UserDAL.cs" />
+    <Compile Include="App_Code\DbContext.cs" />
+    <Compile Include="App_Code\GlobFunc.cs" />
+    <Content Include="App_Code\MongoContext.cs" />
+    <Compile Include="Cities.aspx.cs">
+      <DependentUpon>Cities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cities.aspx.designer.cs">
+      <DependentUpon>Cities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryAdmin\AddBook.aspx.cs">
+      <DependentUpon>AddBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryAdmin\AddBook.aspx.designer.cs">
+      <DependentUpon>AddBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryAdmin\AddBorrow.aspx.cs">
+      <DependentUpon>AddBorrow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryAdmin\AddBorrow.aspx.designer.cs">
+      <DependentUpon>AddBorrow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryAdmin\AddSupplier.aspx.cs">
+      <DependentUpon>AddSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryAdmin\AddSupplier.aspx.designer.cs">
+      <DependentUpon>AddSupplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryAdmin\ListBook.aspx.cs">
+      <DependentUpon>ListBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryAdmin\ListBook.aspx.designer.cs">
+      <DependentUpon>ListBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryAdmin\ListBorrow.aspx.cs">
+      <DependentUpon>ListBorrow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryAdmin\ListBorrow.aspx.designer.cs">
+      <DependentUpon>ListBorrow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryAdmin\ListSupplier.aspx.cs">
+      <DependentUpon>ListSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryAdmin\ListSupplier.aspx.designer.cs">
+      <DependentUpon>ListSupplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryAdmin\UserAdd.aspx.cs">
+      <DependentUpon>UserAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryAdmin\UserAdd.aspx.designer.cs">
+      <DependentUpon>UserAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryAdmin\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryAdmin\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryAdmin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryAdmin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryAdmin\NewAdminMaster.Master.cs">
+      <DependentUpon>NewAdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryAdmin\NewAdminMaster.Master.designer.cs">
+      <DependentUpon>NewAdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.aspx.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogIn.aspx.designer.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mongo.aspx.cs">
+      <DependentUpon>Mongo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mongo.aspx.designer.cs">
+      <DependentUpon>Mongo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LibraryAdmin\data\contacts.json" />
+    <Content Include="LibraryAdmin\data\eu.topo.json" />
+    <Content Include="LibraryAdmin\fonts\feather.eot" />
+    <Content Include="LibraryAdmin\fonts\feather.ttf" />
+    <Content Include="LibraryAdmin\fonts\feather.woff" />
+    <Content Include="LibraryAdmin\.DS_Store" />
+    <Content Include="LibraryAdmin\NewAdminMaster.Master" />
+    <Content Include="data\contacts.json" />
+    <Content Include="data\eu.topo.json" />
+    <Content Include="fonts\feather.eot" />
+    <Content Include="fonts\feather.ttf" />
+    <Content Include="fonts\feather.woff" />
+    <Content Include="libmongocrypt.so" />
+    <Content Include="libmongocrypt.dylib" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.SecurityToken.3.7.100.14\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57418</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57418/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+    <Error Condition="!Exists('..\packages\MongoDB.Libmongocrypt.1.11.0\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Libmongocrypt.1.11.0\build\MongoDB.Libmongocrypt.targets'))" />
+  </Target>
+  <Import Project="..\packages\MongoDB.Libmongocrypt.1.11.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.11.0\build\MongoDB.Libmongocrypt.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
