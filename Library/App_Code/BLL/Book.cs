@@ -8,7 +8,7 @@ using DAL;
 
 namespace BLL
 {
-    public class Book
+    public class Book//ספר
     {
         public int BookId { get; set; }
         public string BookName { get; set; }
