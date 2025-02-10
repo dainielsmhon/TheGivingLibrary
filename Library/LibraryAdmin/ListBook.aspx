@@ -25,14 +25,7 @@
                         </thead>
                         <tbody>
 
-                            
-
-                  
-                 
-          
- 
-
-                           <asp:Repeater ID="rptBooks" runat="server">
+                            <asp:Repeater ID="rptBooks" runat="server">
                                <ItemTemplate>
                                <tr>
                             <td><%#Eval("BookId")%></td>                     
@@ -41,6 +34,7 @@
                             <td><%#Eval("BookDescription")%></td>
                             <td><%#Eval("BookLang")%></td>
                             <td><%#Eval("Location")%></td>
+                            <td><%#Eval("BorrowedBooks")%></td>
                             <td><%#Eval("AvailableQuantity")%></td>
                             <td><%#Eval("Status")%></td>
                             <td><%#Eval("Added")%></td>
@@ -77,19 +71,25 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="UnderFooter" runat="server">
        <script>
-           $('#MainTbl').DataTable(
-           {
-            autoWidth: true,
-            //"lengthMenu": [
-            //  [16, 32, 64, -1]
-            //  [16, 32, 64, "All"]
-            //    ],
-                 
-            
-                   language: {
-                       url: 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/he.json'
-                   }
-           }); 
+           $(document).ready(function () {
+               if ($('#MainTbl').length) {
+                   $('#MainTbl').DataTable(
+                       {
+                           autoWidth: true,
+                           //"lengthMenu": [
+                           //  [16, 32, 64, -1]
+                           //  [16, 32, 64, "All"]
+                           //    ],
+
+
+                           language: {
+                               url: 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/he.json'
+                           }
+                       }); 
+               }
+           });
+
+         
             
        </script>
 </asp:Content>

@@ -9,6 +9,7 @@ using System.Web;
 using System.Xml.Linq;
 
 
+
 namespace DAL
 {
     public class BookDAL
@@ -17,7 +18,7 @@ namespace DAL
         {
             Book Tmp = null;
             DbContext Db = new DbContext();
-            string Sql = $"SELECT * FROM T_Books WHERE BookId={id}";
+            string Sql = $"SELECT *, (TotalQuantity - AvailableQuantity) AS BorrowedBooks FROM T_Books WHERE BookId={id}";
             DataTable Dt = Db.Execute(Sql);
 
             if (Dt.Rows.Count > 0)
@@ -32,6 +33,7 @@ namespace DAL
                     BookLang = Dt.Rows[0]["BookLang"] + "",
                     Location = Dt.Rows[0]["Location"] + "",
                     Status = Dt.Rows[0]["Status"] + "",
+                    BorrowedBooks = int.Parse(Dt.Rows[0]["BorrowedBooks"] + ""), // עכשיו מחושב נכון
                     Added = DateTime.Parse(Dt.Rows[0]["Added"] + ""),
                     TakenDate = DateTime.Parse(Dt.Rows[0]["TakenDate"] + ""),
                     ReturnDate = DateTime.Parse(Dt.Rows[0]["ReturnDate"] + ""),
@@ -46,7 +48,7 @@ namespace DAL
         {
             List<Book> LstTmp = new List<Book>();
             DbContext Db = new DbContext();
-            string Sql = "SELECT * FROM T_Books";
+            string Sql = "SELECT *, (TotalQuantity - AvailableQuantity) AS BorrowedBooks FROM T_Books";
             DataTable Dt = Db.Execute(Sql);
 
             for (int i = 0; i < Dt.Rows.Count; i++)
@@ -61,6 +63,7 @@ namespace DAL
                     BookLang = Dt.Rows[i]["BookLang"] + "",
                     Location = Dt.Rows[i]["Location"] + "",
                     Status = Dt.Rows[i]["Status"] + "",
+                    BorrowedBooks = int.Parse(Dt.Rows[i]["BorrowedBooks"] + ""), // עכשיו מחושב נכון
                     Added = DateTime.Parse(Dt.Rows[i]["Added"] + ""),
                     TakenDate = DateTime.Parse(Dt.Rows[i]["TakenDate"] + ""),
                     ReturnDate = DateTime.Parse(Dt.Rows[i]["ReturnDate"] + ""),

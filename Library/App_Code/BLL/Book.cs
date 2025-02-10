@@ -19,6 +19,7 @@ namespace BLL
         public string Location { get; set; }
         public string Status { get; set; }
         public DateTime Added { get; set; }
+        public int BorrowedBooks { get; set; } 
         public DateTime TakenDate { get; set; }
         public DateTime ReturnDate { get; set; }
         public int AvailableQuantity { get; set; }
