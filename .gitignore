@@ -3,3 +3,5 @@
 ################################################################################
 
 *.vsidx
+/Library/App_Data/Library.mdf
+/Library/App_Data/Library_log.ldf
