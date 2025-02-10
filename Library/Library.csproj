@@ -221,6 +221,7 @@
     <Content Include="css\select2-bootstrap4.css" />
     <Content Include="css\select2.css" />
     <Content Include="css\simplebar.css" />
+    <Content Include="css\StyleD.css" />
     <Content Include="css\uppy.min.css" />
     <Content Include="fonts\feather.svg" />
     <Content Include="Global.asax" />
