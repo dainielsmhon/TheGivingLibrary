@@ -14,6 +14,32 @@ namespace DAL
 {
     public class BookDAL
     {
+        // פונקציה להוריד ספר מהמלאי (שאלה)
+        public static int BorrowBook(int bookId)
+        {
+            DbContext Db = new DbContext();
+            string Sql = $"UPDATE T_Books SET AvailableQuantity = AvailableQuantity - 1 WHERE BookId = {bookId} AND AvailableQuantity > 0";
+            return Db.ExecuteNonQuery(Sql); // הפחתת 1 מהמלאי
+        }
+
+        // פונקציה להחזיר ספר למלאי (חזרה)
+        public static int ReturnBook(int bookId)
+        {
+            DbContext Db = new DbContext();
+            string Sql = $"UPDATE T_Books SET AvailableQuantity = AvailableQuantity + 1 WHERE BookId = {bookId}";
+            return Db.ExecuteNonQuery(Sql); // הוספת 1 למלאי
+        }
+
+        // פונקציה לבדוק אם הספר זמין להשאלה
+        public static bool IsBookAvailable(int bookId)
+        {
+            DbContext Db = new DbContext();
+            string Sql = $"SELECT COUNT(*) FROM T_Books WHERE BookId = {bookId} AND AvailableQuantity > 0";
+            int count = (int)Db.ExecuteScalar(Sql);
+            return count > 0; // מחזיר אם יש במלאי
+        }
+
+        // פונקציה לקבל ספר לפי מזהה
         public static Book GetById(int id)
         {
             Book Tmp = null;
@@ -33,7 +59,7 @@ namespace DAL
                     BookLang = Dt.Rows[0]["BookLang"] + "",
                     Location = Dt.Rows[0]["Location"] + "",
                     Status = Dt.Rows[0]["Status"] + "",
-                    BorrowedBooks = int.Parse(Dt.Rows[0]["BorrowedBooks"] + ""), // עכשיו מחושב נכון
+                    BorrowedBooks = int.Parse(Dt.Rows[0]["BorrowedBooks"] + ""),
                     Added = DateTime.Parse(Dt.Rows[0]["Added"] + ""),
                     TakenDate = DateTime.Parse(Dt.Rows[0]["TakenDate"] + ""),
                     ReturnDate = DateTime.Parse(Dt.Rows[0]["ReturnDate"] + ""),
@@ -44,9 +70,10 @@ namespace DAL
             return Tmp;
         }
 
-        public static List<Book> Get()
+        // פונקציה לקבל את כל הספרים
+        public static System.Collections.Generic.List<Book> Get()
         {
-            List<Book> LstTmp = new List<Book>();
+            System.Collections.Generic.List<Book> LstTmp = new System.Collections.Generic.List<Book>();
             DbContext Db = new DbContext();
             string Sql = "SELECT *, (TotalQuantity - AvailableQuantity) AS BorrowedBooks FROM T_Books";
             DataTable Dt = Db.Execute(Sql);
@@ -63,7 +90,7 @@ namespace DAL
                     BookLang = Dt.Rows[i]["BookLang"] + "",
                     Location = Dt.Rows[i]["Location"] + "",
                     Status = Dt.Rows[i]["Status"] + "",
-                    BorrowedBooks = int.Parse(Dt.Rows[i]["BorrowedBooks"] + ""), // עכשיו מחושב נכון
+                    BorrowedBooks = int.Parse(Dt.Rows[i]["BorrowedBooks"] + ""),
                     Added = DateTime.Parse(Dt.Rows[i]["Added"] + ""),
                     TakenDate = DateTime.Parse(Dt.Rows[i]["TakenDate"] + ""),
                     ReturnDate = DateTime.Parse(Dt.Rows[i]["ReturnDate"] + ""),
@@ -75,6 +102,7 @@ namespace DAL
             return LstTmp;
         }
 
+        // פונקציה למחוק ספר
         public static int Delete(int id)
         {
             DbContext Db = new DbContext();
@@ -82,6 +110,7 @@ namespace DAL
             return Db.ExecuteNonQuery(Sql);
         }
 
+        // פונקציה לשמור ספר חדש או לעדכן ספר קיים
         public static int Save(Book Tmp)
         {
             DbContext Db = new DbContext();
@@ -117,28 +146,6 @@ namespace DAL
             }
 
             return RecCount;
-        }
-
-        public static int BorrowBook(int bookId)
-        {
-            DbContext Db = new DbContext();
-            string Sql = $"UPDATE T_Books SET AvailableQuantity = AvailableQuantity - 1 WHERE BookId = {bookId} AND AvailableQuantity > 0";
-            return Db.ExecuteNonQuery(Sql);
-        }
-
-        public static int ReturnBook(int bookId)
-        {
-            DbContext Db = new DbContext();
-            string Sql = $"UPDATE T_Books SET AvailableQuantity = AvailableQuantity + 1 WHERE BookId = {bookId}";
-            return Db.ExecuteNonQuery(Sql);
-        }
-
-        public static bool IsBookAvailable(int bookId)
-        {
-            DbContext Db = new DbContext();
-            string Sql = $"SELECT COUNT(*) FROM T_Books WHERE BookId = {bookId} AND AvailableQuantity > 0";
-            int count = (int)Db.ExecuteScalar(Sql);
-            return count > 0;
         }
     }
 }
