@@ -13,27 +13,19 @@ namespace Library.LibraryAdmin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //בעת הטעינה הראשונית נמלא את תוכן העמוד ברשימת המשתמשים
             if (!IsPostBack)
             {
-                FillData();
+                FillData();  // טוען את רשימת משתמשים
             }
-
-        }
-        public void FillData()
-        {
-            //לשלוף את רשימת המשתמשים ולחבר אותם לרפיטר
-            RpUser.DataSource = BLL.User.Get();
-            RpUser.DataBind();
         }
 
-        protected void BtnRemove_Click(object sender, EventArgs e)
-        {
-            string Cid = ((Button)sender).CommandArgument;
 
-            int UserId = int.Parse(Cid);
-            BLL.User.Delete(UserId);
-            FillData();
+
+        private void FillData()
+        {
+            var users = BLL.User.Get(); // טוען את כל המשתמשים
+            Repeater1.DataSource = users;  // תוודא שהשימוש הוא בשם נכון של הרפיטר
+            Repeater1.DataBind();
         }
     }
 }

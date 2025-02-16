@@ -4,22 +4,20 @@
 
 </asp:Content>
 
-<asp:Content ID="Content6" ContentPlaceHolderID="MainCnt" runat="server">
-    <h1>רשימת הספרים</h1>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainCnt" runat="server">
+    <h1>רשימת השאלות </h1>
     <div class="card-body">
         <!-- table -->
         <table class="table datatables" id="MainTbl">
             <thead>
                 <tr>
-                    <th>שם ספר</th>
-                    <th>שם מלא</th>
-                    <th>מחבר הספר</th>
-                    <th>תאור הספר</th>
-                    <th>אורך הספר</th>
-                    <th>מיקום הספר</th>
-                    <th>מושאלים</th>
-                    <th>כמות במלאי</th>
-                    <th>מצב הספר קיים/הושאל</th>
+                    <th>מספר השאלה</th>
+                    <th>מספר ספר</th>
+                    <th>תז משאיל</th>
+                    <th>תאריך השאלה</th>
+                    <th>תאריך חזרה משוער</th>
+                    <th>תאריך החזרה בפועל</th>
+                    <th>הערות</th>
                     <th>פעולות</th>
                     
                 </tr>
@@ -28,22 +26,20 @@
                 <asp:Repeater ID="Repeater1" runat="server">
                     <ItemTemplate>
                         <tr>
+                            <td><%# Eval("BorrowId") %></td>
                             <td><%# Eval("BookId") %></td>
-                            <td><%# Eval("BookName") %></td>
-                            <td><%# Eval("BookAuthor") %></td>
-                            <td><%# Eval("BookDescription") %></td>
-                            <td><%# Eval("BookLang") %></td>
-                            <td><%# Eval("Location") %></td>
-                            <td><%# Eval("BorrowedBooks") %></td>
-                            <td><%# Eval("AvailableQuantity") %></td>
-                            <td><%# Eval("Status") %></td>
+                            <td><%# Eval("UserId") %></td>
+                            <td><%# Eval("BorrowDate") %></td>
+                            <td><%# Eval("ReturnDatePlan") %></td>
+                            <td><%# Eval("ActualReturnDate") %></td>
+                            <td><%# Eval("Notse") %></td>
                             <td>                      <div class="dropdown">
                         <button class="btn btn-sm dropdown-toggle more-vertical" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <span class="text-muted sr-only">Action</span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
-                          <a class="dropdown-item" href="AddBook.aspx?BookId=<%# Eval("BookId") %>">עריכה</a>
-                          <a class="dropdown-item" href="AddBorrow.aspx?BookId=<%# Eval("BookId") %>">השאלה</a>
+                          <a class="dropdown-item" href="AddBorrow.aspx?BorrowId=<%# Eval("BorrowId") %>">עריכה</a>
+                          <a class="dropdown-item" href="ListBorrow.aspx?BorrowId=<%# Eval("BorrowId") %>">השאלה</a>
                          <%-- <a class="dropdown-item" href="AddReturn.aspx?BookId=<%# Eval("BookId") %>">החזרה</a>--%>
                         </div>
                       </div></td>
@@ -91,4 +87,5 @@
             
        </script>
 </asp:Content>
--
+
+
