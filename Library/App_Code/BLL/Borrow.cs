@@ -11,17 +11,14 @@ namespace BLL
     {
         public int BorrowId { get; set; }
         public int BookId { get; set; }
-        public string BorrowName { get; set; }
+        public string BookName { get; set; }
 
         public int UserId { get; set; }
         public DateTime BorrowDate { get; set; }
         public DateTime ReturnDatePlan { get; set; }
         public DateTime ActualReturnDate { get; set; }
         public string Notse { get; set; }
-        public string Status { get; set; }
-        public DateTime Added { get; set; }
-        public DateTime TakenDate { get; set; }
-        public DateTime ReturnDate { get; set; }
+     
 
         public int Save()//הוספה/עדכון
         {

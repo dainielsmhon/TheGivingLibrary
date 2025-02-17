@@ -13,6 +13,7 @@
                 <tr>
                     <th>מספר השאלה</th>
                     <th>מספר ספר</th>
+                    <th>שם ספר</th>
                     <th>תז משאיל</th>
                     <th>תאריך השאלה</th>
                     <th>תאריך חזרה משוער</th>
@@ -28,6 +29,7 @@
                         <tr>
                             <td><%# Eval("BorrowId") %></td>
                             <td><%# Eval("BookId") %></td>
+                            <td><%# Eval("BookName") %></td>
                             <td><%# Eval("UserId") %></td>
                             <td><%# Eval("BorrowDate") %></td>
                             <td><%# Eval("ReturnDatePlan") %></td>
@@ -38,10 +40,10 @@
                           <span class="text-muted sr-only">Action</span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
-                          <a class="dropdown-item" href="AddBorrow.aspx?BorrowId=<%# Eval("BorrowId") %>">עריכה</a>
-                          <a class="dropdown-item" href="ListBorrow.aspx?BorrowId=<%# Eval("BorrowId") %>">השאלה</a>
-                         <%-- <a class="dropdown-item" href="AddReturn.aspx?BookId=<%# Eval("BookId") %>">החזרה</a>--%>
-                        </div>
+                          <a class="dropdown-item" href="ListBorrow.aspx?BorrowId=<%# Eval("BorrowId") %>">עריכה</a>
+                          <a class="dropdown-item" href="AddBorrow.aspx?BorrowId=<%# Eval("BorrowId") %>">השאלה</a>
+                          <a class="dropdown-item" href="AddBorrow.aspx?BorrowId=<%# Eval("BorrowId") %>">החזרה</a>
+                        </div>                                   
                       </div></td>
                         </tr>
                     </ItemTemplate>
