@@ -30,10 +30,14 @@ namespace Library.LibraryAdmin
         {
 
             Book Tmp = null;
+            User Tmp2 = null;
+
             string BookId;
+            string UserId;
 
 
             BookId = Request["BookId"] + "";
+            UserId = Request["UserId"] + "";
 
 
             if (string.IsNullOrEmpty(BookId))
@@ -48,13 +52,36 @@ namespace Library.LibraryAdmin
                     BookId = "-1";//הוספת משתמש חדש
                 }
             }
-            HidBookId.Value = BookId;// שמירת שם משתמש  לעריכה או הוספה בשדה הנסתר
+
+            if (string.IsNullOrEmpty(UserId))
+            {
+                UserId = "-1";
+            }
+            else
+            {
+                Tmp2 = BLL.User.GetById(int.Parse(UserId));
+                if (Tmp2 == null)
+                {
+
+                UserId = "-1"; 
+                }
+
+            }
+
+
+
+            HidBookId.Value = BookId;
+            HidUserId.Value = UserId;// שמירת שם משתמש  לעריכה או הוספה בשדה הנסתר
             //נמלא את כל הטופס בנתונים הראשים שלו
 
             if (Tmp != null)//אנחנו במצב עריכה של משתמש לכן יש  למלא את הפרטים
             {
-                Tmp.BookId = Tmp.BookId;
+
+                
+
                 LblBookName.InnerHtml = Tmp.BookName;
+
+
                 
 
             }

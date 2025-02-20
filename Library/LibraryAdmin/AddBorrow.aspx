@@ -7,6 +7,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainCnt" runat="server">
         <h2 ID="LblBookName" runat="server" >BookName</h2> 
     <asp:HiddenField ID="HidBookId" runat="server" />
+    <h2 ID="H1" runat="server" >UserId</h2>
+    <asp:HiddenField ID="HidUserId" runat="server" />
     <h1>בחר משתמש</h1>
     <div class="card-body">
         <!-- table -->
