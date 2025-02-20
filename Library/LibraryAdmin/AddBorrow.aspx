@@ -5,7 +5,8 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainCnt" runat="server">
-    <h1>BookName</h1>
+        <h2 ID="LblBookName" runat="server" >BookName</h2> 
+    <asp:HiddenField ID="HidBookId" runat="server" />
     <h1>בחר משתמש</h1>
     <div class="card-body">
         <!-- table -->
@@ -37,7 +38,9 @@
                           <span class="text-muted sr-only">Action</span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
-                          <a class="dropdown-item" href="UserAdd.aspx?UserId=<%# Eval("UserId") %>">השאלת ספר</a>
+                          <a class="dropdown-item btn btn-sm btn-primary" href="AddBorrow.aspx?UserId=<%# Eval("UserId") %>">השאלת ספר</a>
+                          <a class="dropdown-item" href="AddBorrow.aspx?UserId=<%# Eval("UserId") %>">החזרת ספר</a>
+
 <%--                          <a class="dropdown-item" href="UserId.aspx?UserId=<%# Eval("UserId") %>">הוספה</a>--%>
                          <%-- <a class="dropdown-item" href="UserId.aspx?UserId=<%# Eval("UserId") %>">החזרה</a>--%>
                         </div>

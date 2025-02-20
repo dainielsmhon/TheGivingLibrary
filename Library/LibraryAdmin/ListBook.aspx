@@ -37,16 +37,10 @@
                             <td><%# Eval("BorrowedBooks") %></td>
                             <td><%# Eval("AvailableQuantity") %></td>
                             <td><%# Eval("Status") %></td>
-                            <td>                      <div class="dropdown">
-                        <button class="btn btn-sm dropdown-toggle more-vertical" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <span class="text-muted sr-only">Action</span>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <a class="dropdown-item" href="AddBook.aspx?BookId=<%# Eval("BookId") %>">עריכה</a>
-                          <a class="dropdown-item" href="AddBorrow.aspx?BookId=<%# Eval("BookId") %>">השאלה</a>
-                         <%-- <a class="dropdown-item" href="AddReturn.aspx?BookId=<%# Eval("BookId") %>">החזרה</a>--%>
-                        </div>
-                      </div></td>
+                          <td>
+                        <a  class="btn btn-sm btn-primary" href='AddBorrow.aspx?BookId=<%# Eval("BookId") %>'>השאלה</a>
+                             </td>
+
                         </tr>
                     </ItemTemplate>
                 </asp:Repeater>

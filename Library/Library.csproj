@@ -261,6 +261,7 @@
     <Content Include="js\uppy.min.js" />
     <Content Include="LibraryAdmin\AddBook.aspx" />
     <Content Include="LibraryAdmin\AddBorrow.aspx" />
+    <Content Include="LibraryAdmin\AddReturn.aspx" />
     <Content Include="LibraryAdmin\AddSupplier.aspx" />
     <Content Include="LibraryAdmin\assets\avatars\face-1.jpg" />
     <Content Include="LibraryAdmin\assets\avatars\face-2.jpg" />
@@ -435,6 +436,13 @@
     </Compile>
     <Compile Include="LibraryAdmin\AddBorrow.aspx.designer.cs">
       <DependentUpon>AddBorrow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryAdmin\AddReturn.aspx.cs">
+      <DependentUpon>AddReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryAdmin\AddReturn.aspx.designer.cs">
+      <DependentUpon>AddReturn.aspx</DependentUpon>
     </Compile>
     <Compile Include="LibraryAdmin\AddSupplier.aspx.cs">
       <DependentUpon>AddSupplier.aspx</DependentUpon>
