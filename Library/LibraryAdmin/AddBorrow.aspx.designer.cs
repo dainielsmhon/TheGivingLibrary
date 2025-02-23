@@ -33,24 +33,6 @@ namespace Library.LibraryAdmin
         protected global::System.Web.UI.WebControls.HiddenField HidBookId;
 
         /// <summary>
-        /// LblUserId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LblUserId;
-
-        /// <summary>
-        /// HidUserId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HidUserId;
-
-        /// <summary>
         /// Repeater1 control.
         /// </summary>
         /// <remarks>

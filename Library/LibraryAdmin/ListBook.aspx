@@ -19,7 +19,7 @@
                     <th>מיקום הספר</th>
                     <th>מושאלים</th>
                     <th>כמות במלאי</th>
-                    <th>מצב הספר קיים/הושאל</th>
+                    <%--<th>מצב הספר קיים/הושאל</th>--%>
                     <th>פעולות</th>
                     
                 </tr>
@@ -36,12 +36,12 @@
                             <td><%# Eval("Location") %></td>
                             <td><%# Eval("BorrowedBooks") %></td>
                             <td><%# Eval("AvailableQuantity") %></td>
-                            <td><%# Eval("Status") %></td>
-<td>&nbsp;
-    <%# (Convert.ToInt32(Eval("AvailableQuantity")) > 0) ? 
-        "<a id='LinkAddBorrow' runat='server' class='btn btn-sm btn-primary' href='AddBorrow.aspx?BookId=" + Eval("BookId") + "'>השאלה</a>" : "" 
-    %>
-</td>
+                            <%--<td><%# Eval("Status") %></td>--%>
+                            <td>&nbsp;
+                                <%# (Convert.ToInt32(Eval("AvailableQuantity")) > 0) ? 
+                                    "<a id='LinkAddBorrow' runat='server' class='btn btn-sm btn-primary' href='AddBorrow.aspx?BookId=" + Eval("BookId") + "'>השאלה</a>" : "" 
+                                %>
+                            </td>
 
                        
                             

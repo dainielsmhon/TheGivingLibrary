@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\danie\\Downloads\\Library1\\Library\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\libraryadmin\\listbook.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\listbook.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\libraryadmin\\listborrow.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\listborrow.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\libraryadmin\\addborrow.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\addborrow.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\addborrow.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
@@ -15,16 +15,16 @@
       "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\addborrow.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\app_code\\bll\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\app_code\\bll\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\libraryadmin\\newadminmaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\newadminmaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\libraryadmin\\listborrow.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\listborrow.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\addreturn.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\addreturn.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\libraryadmin\\listbook.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\listbook.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\addreturn.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\addreturn.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Library\\LibraryAdmin\\AddBorrow.aspx.cs",
               "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\AddBorrow.aspx.cs",
               "RelativeToolTip": "Library\\LibraryAdmin\\AddBorrow.aspx.cs",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAUwGIAAAA5AAAA",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAUwLIAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-17T18:28:42.816Z",
               "IsPinned": true,
@@ -67,54 +67,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Book.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\App_Code\\BLL\\Book.cs",
-              "RelativeDocumentMoniker": "Library\\App_Code\\BLL\\Book.cs",
-              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\App_Code\\BLL\\Book.cs",
-              "RelativeToolTip": "Library\\App_Code\\BLL\\Book.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAQwDwAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T17:40:06.458Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ListBook.aspx",
-              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\ListBook.aspx",
-              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\ListBook.aspx",
-              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\ListBook.aspx",
-              "RelativeToolTip": "Library\\LibraryAdmin\\ListBook.aspx",
+              "Title": "NewAdminMaster.Master",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\NewAdminMaster.Master",
+              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\NewAdminMaster.Master",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\NewAdminMaster.Master",
+              "RelativeToolTip": "Library\\LibraryAdmin\\NewAdminMaster.Master",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-02-23T17:45:29.115Z",
+              "WhenOpened": "2025-02-23T20:06:41.481Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ListBorrow.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\ListBorrow.aspx.cs",
-              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\ListBorrow.aspx.cs",
-              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\ListBorrow.aspx.cs",
-              "RelativeToolTip": "Library\\LibraryAdmin\\ListBorrow.aspx.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAuwA8AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-20T17:29:06.77Z",
+              "Title": "AddReturn.aspx",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\AddReturn.aspx",
+              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\AddReturn.aspx",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\AddReturn.aspx",
+              "RelativeToolTip": "Library\\LibraryAdmin\\AddReturn.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-02-23T17:55:07.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ListBorrow.aspx",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\ListBorrow.aspx",
+              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\ListBorrow.aspx",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\ListBorrow.aspx",
+              "RelativeToolTip": "Library\\LibraryAdmin\\ListBorrow.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-02-23T19:51:32.726Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ListBook.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\ListBook.aspx.cs",
-              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\ListBook.aspx.cs",
-              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\ListBook.aspx.cs",
-              "RelativeToolTip": "Library\\LibraryAdmin\\ListBook.aspx.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Title": "AddReturn.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\AddReturn.aspx.cs",
+              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\AddReturn.aspx.cs",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\AddReturn.aspx.cs",
+              "RelativeToolTip": "Library\\LibraryAdmin\\AddReturn.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-20T17:28:46.312Z",
+              "WhenOpened": "2025-02-23T17:55:10.061Z",
               "EditorCaption": ""
             }
           ]
