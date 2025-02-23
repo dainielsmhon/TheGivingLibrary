@@ -71,7 +71,7 @@ namespace Library.LibraryAdmin
 
 
             HidBookId.Value = BookId;
-            HidUserId.Value = UserId;// שמירת שם משתמש  לעריכה או הוספה בשדה הנסתר
+            //HidUserId.Value = UserId;// שמירת שם משתמש  לעריכה או הוספה בשדה הנסתר
             //נמלא את כל הטופס בנתונים הראשים שלו
 
             if (Tmp != null)//אנחנו במצב עריכה של משתמש לכן יש  למלא את הפרטים
@@ -80,14 +80,36 @@ namespace Library.LibraryAdmin
                 
 
                 LblBookName.InnerHtml = Tmp.BookName;
+                if (Tmp2 != null)
+                {
+                    BLL.Borrow Tmp3 = new Borrow()
+                    {
+                        BorrowId = -1,
+                        BookId = Tmp.BookId,
+                        BookName = Tmp.BookName,
+                        UserId = Tmp2.UserId,
+                        BorrowDate = DateTime.Now,
+                        ReturnDatePlan = DateTime.Now.AddDays(14),
+                        ActualReturnDate = DateTime.Now.AddDays(365)
 
 
-                
+                    };
+                    Tmp3.Save();
+                    Book.Borrow(Tmp.BookId);
+                    Response.Redirect("ListBorrow.aspx");
+                }
+                //LblUserId.InnerHtml = Tmp2.UserId;
+
+
+
+
 
             }
 
-            var users = BLL.User.Get(); // טוען את כל המשתמשים
-            Repeater1.DataSource = users;  // תוודא שהשימוש הוא בשם נכון של הרפיטר
+            var users = BLL.User.Get();
+            //var Books = BLL.Book.Get();// טוען את כל המשתמשים
+            Repeater1.DataSource = users;
+            // תוודא שהשימוש הוא בשם נכון של הרפיטר
             Repeater1.DataBind();
         }
 

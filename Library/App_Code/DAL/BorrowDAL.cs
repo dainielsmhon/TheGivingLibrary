@@ -42,7 +42,7 @@ namespace DAL
             {
                 List<Borrow> LstTmp = new List<Borrow>();
                 DbContext Db = new DbContext();
-                string Sql = $" SELECT * FROM T_Borrow ";
+                string Sql = $" SELECT * FROM T_Borrow order by BorrowId desc ";
                 DataTable Dt = Db.Execute(Sql);
                 for (int i = 0; i < Dt.Rows.Count; i++)//עובר על כל השורות שחזרו
                 {
