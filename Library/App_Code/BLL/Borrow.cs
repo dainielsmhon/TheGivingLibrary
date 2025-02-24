@@ -17,6 +17,7 @@ namespace BLL
         public DateTime BorrowDate { get; set; }
         public DateTime ReturnDatePlan { get; set; }
         public DateTime ActualReturnDate { get; set; }
+        public int Status { get; set; } 
         public string Notse { get; set; }
      
 

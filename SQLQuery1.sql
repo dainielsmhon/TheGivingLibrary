@@ -1,2 +1,1 @@
-﻿DELETE FROM T_Books
-WHERE CAST(Added AS DATE) = '2025-10-02';
+﻿update T_Borrow set Status =0

@@ -30,7 +30,11 @@ namespace DAL
                     BorrowDate = DateTime.Parse(Dt.Rows[0]["BorrowDate"] + ""),
                     ReturnDatePlan = DateTime.Parse(Dt.Rows[0]["ReturnDatePlan"] + ""),
                     ActualReturnDate = DateTime.Parse(Dt.Rows[0]["ActualReturnDate"] + ""),
+                    Status = int.Parse(Dt.Rows[0]["Status"] + ""),
                     Notse = Dt.Rows[0]["Notse"] + ""
+
+                    
+
 
                 };
 
@@ -55,6 +59,7 @@ namespace DAL
                         BorrowDate = DateTime.Parse(Dt.Rows[i]["BorrowDate"] + ""),
                         ReturnDatePlan = DateTime.Parse(Dt.Rows[i]["ReturnDatePlan"] + ""),
                         ActualReturnDate = DateTime.Parse(Dt.Rows[i]["ActualReturnDate"] + ""),
+                        Status = int.Parse(Dt.Rows[i]["Status"] + ""),
                         Notse = Dt.Rows[i]["Notse"] + ""
 
                     };//מוסיף לרשימה 
@@ -85,8 +90,8 @@ namespace DAL
                 string Sql = "";
                 if (Tmp.BorrowId == -1)
                 {
-                    Sql = $"INSERT INTO t_Borrow (BookId, BookName, UserId, BorrowDate, ReturnDatePlan, ActualReturnDate, Notse) VALUES ";
-                    Sql += $" ({Tmp.BookId}, N'{Tmp.BookName}', {Tmp.UserId}, '{Tmp.BorrowDate:yyyy-MM-dd}', '{Tmp.ReturnDatePlan:yyyy-MM-dd}', '{Tmp.ActualReturnDate:yyyy-MM-dd}', N'{Tmp.Notse}')";
+                    Sql = $"INSERT INTO t_Borrow (BookId, BookName, UserId, BorrowDate, ReturnDatePlan, ActualReturnDate,Status, Notse) VALUES ";
+                    Sql += $" ({Tmp.BookId}, N'{Tmp.BookName}', {Tmp.UserId}, '{Tmp.BorrowDate:yyyy-MM-dd}', '{Tmp.ReturnDatePlan:yyyy-MM-dd}', '{Tmp.ActualReturnDate:yyyy-MM-dd}',{Tmp.Status}, N'{Tmp.Notse}')";
                 }
 
                 else
@@ -98,6 +103,7 @@ namespace DAL
                     Sql += $"BorrowDate='{Tmp.BorrowDate:yyyy-MM-dd}', ";
                     Sql += $"ReturnDatePlan='{Tmp.ReturnDatePlan:yyyy-MM-dd}', ";
                     Sql += $"ActualReturnDate='{Tmp.ActualReturnDate:yyyy-MM-dd}', ";
+                    Sql += $"Status={Tmp.Status}, ";
                     Sql += $"Notse=N'{Tmp.Notse}' ";
                     Sql += $"WHERE BorrowId={Tmp.BorrowId}";
                 }

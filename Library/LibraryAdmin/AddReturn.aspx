@@ -1,10 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LibraryAdmin/NewAdminMaster.Master" AutoEventWireup="true" CodeBehind="ListBorrow.aspx.cs" Inherits="Library.LibraryAdmin.ListBorrow" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LibraryAdmin/NewAdminMaster.Master" AutoEventWireup="true" CodeBehind="AddReturn.aspx.cs" Inherits="Library.LibraryAdmin.AddReturn" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
 
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainCnt" runat="server">
+      <h2 ID="LblBookName" runat="server" >BookName</h2> 
+  <asp:HiddenField ID="HidBookId" runat="server" />
     <h1>רשימת השאלות </h1>
     <div class="card-body">
         <!-- table -->
@@ -18,6 +20,7 @@
                     <th>תאריך השאלה</th>
                     <th>תאריך חזרה משוער</th>
                     <th>תאריך החזרה בפועל</th>
+                    <th>סטטוס</th>
                     <th>הערות</th>
                     <th>פעולות</th>
                     
@@ -34,6 +37,7 @@
                             <td><%# Eval("BorrowDate") %></td>
                             <td><%# Eval("ReturnDatePlan") %></td>
                             <td><%# Eval("ActualReturnDate") %></td>
+                            <td><%# Eval("Status") %></td>
                             <td><%# Eval("Notse") %></td>
                             <td>                      <div class="dropdown">
                         <button class="btn btn-sm dropdown-toggle more-vertical" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -42,7 +46,7 @@
                         <div class="dropdown-menu dropdown-menu-right">
                       <%--    <a class="dropdown-item" href="ListBorrow.aspx?BorrowId=<%# Eval("BorrowId") %>">עריכה</a>
                           <a class="dropdown-item" href="AddBorrow.aspx?BorrowId=<%# Eval("BorrowId") %>">השאלה</a>
-                          --%><a class="dropdown-item" href="AddBorrow.aspx?BorrowId=<%# Eval("BorrowId") %>">החזרה</a>
+                          --%><a class="dropdown-item" href="AddReturn.aspx?BorrowId=<%# Eval("BorrowId") %>">החזרה</a>
                         </div>                                   
                       </div></td>
                         </tr>

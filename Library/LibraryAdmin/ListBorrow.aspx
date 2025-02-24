@@ -18,6 +18,7 @@
                     <th>תאריך השאלה</th>
                     <th>תאריך חזרה משוער</th>
                     <th>תאריך החזרה בפועל</th>
+                    <th>סטטוס</th>
                     <th>הערות</th>
                     <th>פעולות</th>
                     
@@ -34,10 +35,14 @@
                             <td><%# Eval("BorrowDate") %></td>
                             <td><%# Eval("ReturnDatePlan") %></td>
                             <td><%# Eval("ActualReturnDate") %></td>
+                            <td><%# Eval("Status") %></td>
                             <td><%# Eval("Notse") %></td>
-                            <td>           
-                            <a class="btn btn-sm btn-primary" href="AddBorrow.aspx?UserId=<%# Eval("UserId") %>&BookId=<%# Request.QueryString["BookId"] %>">השאלת ספר</a>
-                        </td>
+                          
+                             <td>&nbsp;
+                             <%# (Convert.ToInt32(Eval("Status")) == 0) ? 
+                                 "<a id='LinkAddReturn' runat='server' class='btn btn-sm btn-primary' href='AddReturn.aspx?BorrowId=" + Eval("BorrowId") + "'>החזרה</a>" : "" 
+                             %>
+ </td>
                         
                                                 </tr>
                     </ItemTemplate>
