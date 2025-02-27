@@ -261,6 +261,7 @@
     <Content Include="js\uppy.min.js" />
     <Content Include="LibraryAdmin\AddBook.aspx" />
     <Content Include="LibraryAdmin\AddBorrow.aspx" />
+    <Content Include="LibraryAdmin\AddOrder.aspx" />
     <Content Include="LibraryAdmin\AddReturn.aspx" />
     <Content Include="LibraryAdmin\AddSupplier.aspx" />
     <Content Include="LibraryAdmin\assets\avatars\face-1.jpg" />
@@ -284,6 +285,7 @@
     <Content Include="LibraryAdmin\auth-resetpw.html" />
     <Content Include="LibraryAdmin\ListBook.aspx" />
     <Content Include="LibraryAdmin\ListBorrow.aspx" />
+    <Content Include="LibraryAdmin\listOrder.aspx" />
     <Content Include="LibraryAdmin\ListSupplier.aspx" />
     <Content Include="LibraryAdmin\UserAdd.aspx" />
     <Content Include="LibraryAdmin\UserList.aspx" />
@@ -437,6 +439,13 @@
     <Compile Include="LibraryAdmin\AddBorrow.aspx.designer.cs">
       <DependentUpon>AddBorrow.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LibraryAdmin\AddOrder.aspx.cs">
+      <DependentUpon>AddOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryAdmin\AddOrder.aspx.designer.cs">
+      <DependentUpon>AddOrder.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LibraryAdmin\AddReturn.aspx.cs">
       <DependentUpon>AddReturn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -464,6 +473,13 @@
     </Compile>
     <Compile Include="LibraryAdmin\ListBorrow.aspx.designer.cs">
       <DependentUpon>ListBorrow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryAdmin\listOrder.aspx.cs">
+      <DependentUpon>listOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryAdmin\listOrder.aspx.designer.cs">
+      <DependentUpon>listOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="LibraryAdmin\ListSupplier.aspx.cs">
       <DependentUpon>ListSupplier.aspx</DependentUpon>
