@@ -405,11 +405,13 @@
     <Compile Include="App_Code\BLL\Book.cs" />
     <Compile Include="App_Code\BLL\Borrow.cs" />
     <Compile Include="App_Code\BLL\DbLogs.cs" />
+    <Compile Include="App_Code\BLL\Order.cs" />
     <Compile Include="App_Code\BLL\Supplier.cs" />
     <Compile Include="App_Code\BLL\User.cs" />
     <Compile Include="App_Code\DAL\BookDAL.cs" />
     <Compile Include="App_Code\DAL\BorrowDAL.cs" />
     <Compile Include="App_Code\DAL\DbLogsDAL.cs" />
+    <Compile Include="App_Code\DAL\OrderDAL.cs" />
     <Compile Include="App_Code\DAL\SupplierDAL.cs" />
     <Compile Include="App_Code\DAL\UserDAL.cs" />
     <Compile Include="App_Code\DbContext.cs" />

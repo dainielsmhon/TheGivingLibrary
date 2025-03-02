@@ -212,6 +212,12 @@
                 <li class="nav-item">
                   <a class="nav-link pl-3" href="AddSupplier.aspx"><span class="ml-1 item-text">הוספת ספק</span></a>
                 </li>
+                  <li class="nav-item">
+                  <a class="nav-link pl-3" href="AddOrder.aspx"><span class="ml-1 item-text">הזמנה חדשה</span></a>
+                </li>
+                                  <li class="nav-item">
+                  <a class="nav-link pl-3" href="ListOrder.aspx"><span class="ml-1 item-text">רשימת הזמנות</span></a>
+                </li>
                   </ul>
                 
                
