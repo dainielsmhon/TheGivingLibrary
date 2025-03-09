@@ -24,6 +24,7 @@ namespace BLL
         public DateTime TakenDate { get; set; }
         public DateTime ReturnDate { get; set; }
         public int AvailableQuantity { get; set; }
+        public int SupplierId { get; set; }
 
         // פונקציה לשמור את הספר (הוספה או עדכון)
         public int Save()
@@ -65,6 +66,10 @@ namespace BLL
         public static bool IsBookAvailable(int bookId)
         {
             return BookDAL.IsBookAvailable(bookId);
+        }
+        public static List<Book> GetBooksBySupplier(int supplierId)
+        {
+            return BookDAL.GetBooksBySupplier(supplierId);  // קריאה לפונקציה ב-DAL לשליפת ספרים לפי ספק
         }
     }
 }

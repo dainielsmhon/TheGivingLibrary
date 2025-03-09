@@ -8,78 +8,102 @@ namespace DAL
 {
     public class OrderDAL
     {
-        // פונקציה לקבל את כל ההזמנות
-        public static List<Order> Get()
-        {
-            List<Order> orders = new List<Order>();
-            DbContext Db = new DbContext();
-            string Sql = "SELECT * FROM T_Orders";  // שאילתה לשלוף את כל ההזמנות
-            DataTable Dt = Db.Execute(Sql);
-
-            foreach (DataRow row in Dt.Rows)
-            {
-                Order order = new Order()
-                {
-                    OrderId = int.Parse(row["OrderId"].ToString()),
-                    SupplierId = int.Parse(row["SupplierId"].ToString()),
-                    BookId = int.Parse(row["BookId"].ToString()),
-                    Quantity = int.Parse(row["Quantity"].ToString()),
-                    OrderDate = DateTime.Parse(row["OrderDate"].ToString())
-                };
-                orders.Add(order);
-            }
-
-            return orders;
-        }
-
-        // פונקציה לשמור הזמנה חדשה או לעדכן קיימת
-        public static int Save(Order order)
-        {
-            DbContext Db = new DbContext();
-            string Sql = "";
-
-            if (order.OrderId == 0)  // אם אין OrderId, אנחנו מוסיפים הזמנה חדשה
-            {
-                Sql = "INSERT INTO T_Orders (SupplierId, BookId, Quantity, OrderDate) VALUES ";
-                Sql += $"({order.SupplierId}, {order.BookId}, {order.Quantity}, '{order.OrderDate:yyyy-MM-dd}')";
-            }
-            else  // אם יש OrderId, אנחנו מעדכנים את ההזמנה
-            {
-                Sql = $"UPDATE T_Orders SET SupplierId = {order.SupplierId}, BookId = {order.BookId}, Quantity = {order.Quantity}, OrderDate = '{order.OrderDate:yyyy-MM-dd}' WHERE OrderId = {order.OrderId}";
-            }
-
-            return Db.ExecuteNonQuery(Sql);  // מבצע את השאילתה
-        }
-
-        // פונקציה למחוק הזמנה
-        public static int Delete(int orderId)
-        {
-            DbContext Db = new DbContext();
-            string Sql = $"DELETE FROM T_Orders WHERE OrderId = {orderId}";
-            return Db.ExecuteNonQuery(Sql);  // מבצע את השאילתה למחיקת ההזמנה
-        }
-
         // פונקציה לקבלת הזמנה לפי מזהה
-        public static Order GetById(int orderId)
+        public static Order GetById(int id)
         {
+            Order Tmp = null;
             DbContext Db = new DbContext();
-            string Sql = $"SELECT * FROM T_Orders WHERE OrderId = {orderId}";
+            string Sql = $"SELECT * FROM T_Orders WHERE OrderId = {id}";
             DataTable Dt = Db.Execute(Sql);
 
             if (Dt.Rows.Count > 0)
             {
-                DataRow row = Dt.Rows[0];
-                return new Order()
+                Tmp = new Order()
                 {
-                    OrderId = int.Parse(row["OrderId"].ToString()),
-                    SupplierId = int.Parse(row["SupplierId"].ToString()),
-                    BookId = int.Parse(row["BookId"].ToString()),
-                    Quantity = int.Parse(row["Quantity"].ToString()),
-                    OrderDate = DateTime.Parse(row["OrderDate"].ToString())
+                    OrderId = int.Parse(Dt.Rows[0]["OrderId"] + ""),
+                    SupplierId = int.Parse(Dt.Rows[0]["SupplierId"] + ""),
+                    BookId = int.Parse(Dt.Rows[0]["BookId"] + ""),
+                    Quantity = int.Parse(Dt.Rows[0]["Quantity"] + ""),
+                    OrderDate = DateTime.Parse(Dt.Rows[0]["OrderDate"] + ""),
+                    Status = int.Parse(Dt.Rows[0]["Status"] + "")
                 };
             }
 
-            return null;  // אם לא נמצאה הזמנה
+            return Tmp; // אם לא מצא כלום, מחזיר null
+        }
+
+        // פונקציה לקבל את כל ההזמנות
+        public static List<Order> Get()
+        {
+            List<Order> LstTmp = new List<Order>();
+            DbContext Db = new DbContext();
+            string Sql = $"SELECT * FROM T_Orders ORDER BY OrderId DESC";
+            DataTable Dt = Db.Execute(Sql);
+
+            for (int i = 0; i < Dt.Rows.Count; i++) // עובר על כל השורות שחזרו
+            {
+                Order Tmp = new Order()
+                {
+                    OrderId = int.Parse(Dt.Rows[i]["OrderId"] + ""),
+                    SupplierId = int.Parse(Dt.Rows[i]["SupplierId"] + ""),
+                    BookId = int.Parse(Dt.Rows[i]["BookId"] + ""),
+                    Quantity = int.Parse(Dt.Rows[i]["Quantity"] + ""),
+                    OrderDate = DateTime.Parse(Dt.Rows[i]["OrderDate"] + ""),
+                    Status = int.Parse(Dt.Rows[i]["Status"] + "")
+                };
+                LstTmp.Add(Tmp); // מוסיף לרשימה
+            }
+
+            return LstTmp;
+        }
+
+        // פונקציה למחיקת הזמנה
+        public static int Delete(int id)
+        {
+            DbContext Db = new DbContext();
+            string Sql = $"DELETE FROM T_Orders WHERE OrderId = {id}";
+            return Db.ExecuteNonQuery(Sql);
+        }
+
+        // פונקציה לשמירה (הוספה/עדכון) של הזמנה
+        public static int Save(Order Tmp)
+        {
+            DbContext Db = new DbContext();
+            string Sql = "";
+            int RecCount = 0;
+
+            if (Tmp.OrderId == -1) // הוספת הזמנה חדשה
+            {
+                Sql = $"INSERT INTO T_Orders (SupplierId, BookId, Quantity, OrderDate, Status) VALUES ";
+                Sql += $"({Tmp.SupplierId}, {Tmp.BookId}, {Tmp.Quantity}, '{Tmp.OrderDate:yyyy-MM-dd}', {Tmp.Status})";
+            }
+            else // עדכון הזמנה קיימת
+            {
+                Sql = $"UPDATE T_Orders SET ";
+                Sql += $"SupplierId = {Tmp.SupplierId}, ";
+                Sql += $"BookId = {Tmp.BookId}, ";
+                Sql += $"Quantity = {Tmp.Quantity}, ";
+                Sql += $"OrderDate = '{Tmp.OrderDate:yyyy-MM-dd}', ";
+                Sql += $"Status = {Tmp.Status} ";
+                Sql += $"WHERE OrderId = {Tmp.OrderId}";
+            }
+
+            RecCount = Db.ExecuteNonQuery(Sql);
+
+            if (Tmp.OrderId == -1)
+            {
+                Tmp.OrderId = Db.GetMaxId("T_Orders", "OrderId");
+            }
+
+            return RecCount;
+        }
+
+        // פונקציה לעדכון סטטוס ההזמנה
+        public static int UpdateStatus(int orderId, int newStatus)
+        {
+            DbContext Db = new DbContext();
+            string Sql = $"UPDATE T_Orders SET Status = {newStatus} WHERE OrderId = {orderId}";
+            return Db.ExecuteNonQuery(Sql);
         }
     }
 }

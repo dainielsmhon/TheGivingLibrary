@@ -118,8 +118,8 @@ namespace DAL
 
             if (Tmp.BookId == -1)
             {
-                Sql = $"INSERT INTO T_Books (BookName, BookAuthor, Year, BookDescription, BookLang, Location, Status, Added, TakenDate, ReturnDate, AvailableQuantity) VALUES ";
-                Sql += $"(N'{Tmp.BookName}', N'{Tmp.BookAuthor}', '{Tmp.Year:yyyy-MM-dd}', N'{Tmp.BookDescription}', N'{Tmp.BookLang}', N'{Tmp.Location}', N'{Tmp.Status}', '{Tmp.Added:yyyy-MM-dd}', '{Tmp.TakenDate:yyyy-MM-dd}', '{Tmp.ReturnDate:yyyy-MM-dd}', {Tmp.AvailableQuantity})";
+                Sql = $"INSERT INTO T_Books (BookName, BookAuthor, Year, BookDescription, BookLang, Location, Status, Added, TakenDate, ReturnDate, AvailableQuantity,SupplierId) VALUES ";
+                Sql += $"(N'{Tmp.BookName}', N'{Tmp.BookAuthor}', '{Tmp.Year:yyyy-MM-dd}', N'{Tmp.BookDescription}', N'{Tmp.BookLang}', N'{Tmp.Location}', N'{Tmp.Status}', '{Tmp.Added:yyyy-MM-dd}', '{Tmp.TakenDate:yyyy-MM-dd}', '{Tmp.ReturnDate:yyyy-MM-dd}', {Tmp.AvailableQuantity}, {Tmp.SupplierId})";
             }
             else
             {
@@ -135,6 +135,7 @@ namespace DAL
                 Sql += $"TakenDate='{Tmp.TakenDate:yyyy-MM-dd}', ";
                 Sql += $"ReturnDate='{Tmp.ReturnDate:yyyy-MM-dd}', ";
                 Sql += $"AvailableQuantity={Tmp.AvailableQuantity} ";
+                Sql += $"SupplierId={Tmp.SupplierId} ";
                 Sql += $"WHERE BookId={Tmp.BookId}";
             }
 
@@ -146,6 +147,40 @@ namespace DAL
             }
 
             return RecCount;
+
+        }
+        public static List<Book> GetBooksBySupplier(int supplierId)
+        {
+            List<Book> books = new List<Book>();
+            DbContext Db = new DbContext();
+            string Sql = $"SELECT * FROM T_Books WHERE SupplierId = {supplierId}"; // הוספת SupplierId לשאילתא
+            DataTable Dt = Db.Execute(Sql);
+
+            foreach (DataRow row in Dt.Rows)
+            {
+                Book Tmp = new Book()
+                {
+                    BookId = int.Parse(row["BookId"].ToString()),
+                    BookName = row["BookName"].ToString(),
+                    BookAuthor = row["BookAuthor"].ToString(),
+                    Year = DateTime.Parse(row["Year"].ToString()),
+                    BookDescription = row["BookDescription"].ToString(),
+                    BookLang = row["BookLang"].ToString(),
+                    Location = row["Location"].ToString(),
+                    Status = row["Status"].ToString(),
+                    BorrowedBooks = int.Parse(row["BorrowedBooks"].ToString()),
+                    Added = DateTime.Parse(row["Added"].ToString()),
+                    TakenDate = DateTime.Parse(row["TakenDate"].ToString()),
+                    ReturnDate = DateTime.Parse(row["ReturnDate"].ToString()),
+                    AvailableQuantity = int.Parse(row["AvailableQuantity"].ToString()),
+                    SupplierId = int.Parse(row["SupplierId"].ToString()) 
+                };
+                books.Add(Tmp);
+            }
+
+            return books;
         }
     }
+
 }
+

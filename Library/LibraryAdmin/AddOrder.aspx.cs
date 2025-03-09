@@ -1,46 +1,74 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BLL; // ייבוא של מחלקות BLL כמו ספרים וספקים
 
 namespace Library.LibraryAdmin
 {
     public partial class AddOrder : System.Web.UI.Page
     {
         
-        //protected void BtnSave_Click(object sender, EventArgs e)
-        //{
-            
-        //    int quantity = int.Parse(TxtQuantity.Text);  // כמות הספרים
-        //    int supplierId = int.Parse(ddlSuppliers.SelectedValue);  // מזהה הספק שנבחר
-        //    int bookId = int.Parse(ddlBooks.SelectedValue);  // מזהה הספר שנבחר
-
-        //    //  שמירה של הנתונים בDB 
-        //    SaveOrder(supplierId, bookId, quantity);
-        //}
-
-        //// פונקציה לשמירה בבסיס הנתונים
-        //private void SaveOrder(int supplierId, int bookId, int quantity)
-        //{
-        //    // 3. יצירת חיבור לדאטה-בייס (באמצעות DbContext)
-        //    using (var context = new YourDbContext())
-        //    {
-        //        // 4. יצירת אובייקט של הזמנה חדשה
-        //        var order = new Order
-        //        {
-        //            SupplierId = supplierId,
-        //            BookId = bookId,
-        //            Quantity = quantity,
-        //            OrderDate = DateTime.Now  // תאריך הזמנה נוכחי
-        //        };
-
-        //        // 5. הוספת ההזמנה לבסיס הנתונים
-        //        context.Orders.Add(order);
-
-        //        // 6. שמירת השינויים בבסיס הנתונים
-        //        context.SaveChanges();
-        //  }
+        // פעולה טוענת את הספקים ל-DropDownList
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                FillData(); // קריאה לפונקציה אתחול הנתונים
+            }
         }
+
+        // פונקציה שמביאה את כל הנתונים הנדרשים (כמו ספקים וספרים)
+        public void FillData()
+        {
+            // קריאה לפונקציה ב-BLL לשליפת הספקים
+            var suppliers = Supplier.Get();
+            ddlSuppliers.DataSource = suppliers;
+            ddlSuppliers.DataTextField = "SupplierName"; // הצגת שם הספק
+            ddlSuppliers.DataValueField = "SupplierId"; // שימוש ב-SupplierId כערך ברשימה
+            ddlSuppliers.DataBind();
+
+            // נוסיף אפשרות לברירת מחדל שלא תוכל לבחור ספק עם ID = 0
+            ddlSuppliers.Items.Insert(0, new ListItem("בחר ספק", "0"));
+        }
+
+        // פעולה שמתבצעת כאשר בוחרים ספק מהרשימה
+        protected void ddlSuppliers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // בדיקה שהספק לא שווה ל-0 (בחר ספק)
+            if (ddlSuppliers.SelectedValue != "0")
+            {
+                int selectedSupplierId = int.Parse(ddlSuppliers.SelectedValue);  // מקבלים את ה-SupplierId שנבחר
+
+                // קריאה לפונקציה ב-BLL לשליפת הספרים של הספק הספציפי
+                var books = Book.GetBooksBySupplier(selectedSupplierId);
+
+                ddlBooks.DataSource = books;
+                ddlBooks.DataTextField = "BookName";  // הצגת שם הספר
+                ddlBooks.DataValueField = "BookId";  // שימוש ב-BookId כערך ברשימה
+                ddlBooks.DataBind();
+
+                // נוסיף אפשרות לברירת מחדל שלא תוכל לבחור ספר עם ID = 0
+                ddlBooks.Items.Insert(0, new ListItem("בחר ספר", "0"));
+            }
+        }
+
+        // שמירה של ההזמנה
+        protected void BtnSave_Click(object sender, EventArgs e)
+        {
+            // יצירת אובייקט הזמנה
+            var order = new Order
+            {
+                SupplierId = int.Parse(ddlSuppliers.SelectedValue),
+                BookId = int.Parse(ddlBooks.SelectedValue),
+                Quantity = int.Parse(TxtQuantity.Text),
+                OrderDate = DateTime.Now
+            };
+
+            // שמירה דרך BLL
+            order.Save();
+
+            // אפשר להוסיף הפניה לדף רשימת ההזמנות לאחר השמירה
+            Response.Redirect("ListOrder.aspx");
+        }
+    }
 }

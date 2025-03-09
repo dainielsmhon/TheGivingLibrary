@@ -45,8 +45,13 @@ namespace Library.LibraryAdmin
                 }
             }
             HidBookId.Value = BookId;// שמירת שם משתמש  לעריכה או הוספה בשדה הנסתר
-            //נמלא את כל הטופס בנתונים הראשים שלו
-
+                                     //נמלא את כל הטופס בנתונים הראשים שלו
+                                     // טוען את רשימת הספקים לדפדפן
+            var suppliers = Supplier.Get();  // מביא את הספקים
+            ddlSuppliers.DataSource = suppliers;
+            ddlSuppliers.DataTextField = "SupplierName";  // מציג את שם הספק
+            ddlSuppliers.DataValueField = "SupplierId";  // משתמש ב-SupplierId
+            ddlSuppliers.DataBind();
             if (Tmp != null)//אנחנו במצב עריכה של משתמש לכן יש  למלא את הפרטים
             {
                 Tmp.BookId = Tmp.BookId;
@@ -60,6 +65,7 @@ namespace Library.LibraryAdmin
                 TextAdded.Text = Tmp.Added.ToString("yyyy-MM-dd");
                 TxtTakenDate.Text = Tmp.TakenDate.ToString("yyyy-MM-dd");
                 TxtReturnDate.Text = Tmp.ReturnDate.ToString("yyyy-MM-dd");
+                ddlSuppliers.SelectedValue = Tmp.SupplierId.ToString();//מצביע על הספק 
 
             }
         }
@@ -80,7 +86,8 @@ namespace Library.LibraryAdmin
                 Status = TxtStatus.Text,
                 Added = DateTime.Parse(TextAdded.Text),
                 TakenDate = DateTime.Parse(TextAdded.Text),
-                ReturnDate = DateTime.Parse(TextAdded.Text)
+                ReturnDate = DateTime.Parse(TextAdded.Text),
+                SupplierId = int.Parse(ddlSuppliers.SelectedValue)
 
 
 

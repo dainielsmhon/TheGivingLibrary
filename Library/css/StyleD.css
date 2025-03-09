@@ -142,3 +142,27 @@ nav {
                     color: #fff;
                     border-radius: 5px;
                 }
+
+/* רווחים בין השורות בטופס */
+.form-row {
+    margin-bottom: 20px; /* מרווח בין שורות */
+}
+
+/* עיצוב כפתורים */
+.button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+}
+
+    .button:hover {
+        background-color: #2980b9;
+    }
+
+/* הוספת רווחים בין השדות */
+input, select, textarea {
+    margin-bottom: 15px;
+}

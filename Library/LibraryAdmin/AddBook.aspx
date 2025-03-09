@@ -27,11 +27,17 @@
                     <label for="TxtName">שם ספר </label>
                     <asp:TextBox ID="TxtName" runat="server" CssClass="form-control" placeholder="נא הזן שם ספר " />
                 </div>
+                        <div class="col-md-6 mb-3">
+                <label for="TxtAuthor">שם סופר </label>
+                <asp:TextBox ID="TxtAuthor" runat="server" CssClass="form-control" placeholder="נא הזן שם סופר " />
             </div>
-            <div class="col-md-6 mb-3">
-                <label for="TxtAuthor">מחבר הספר </label>
-                <asp:TextBox ID="TxtAuthor" runat="server" CssClass="form-control " placeholder="נא הזן שם מחבר" />
+            <div class="col-md-4 mb-3">
+                <label for="ddlSuppliers">בחר ספק</label>
+                <asp:DropDownList ID="ddlSuppliers" runat="server" CssClass="form-control" AutoPostBack="true">
+                    <asp:ListItem Text="בחר ספק" Value="0"></asp:ListItem>
+                </asp:DropDownList>
             </div>
+
 
 
             <div class="col-md-4 mb-3">

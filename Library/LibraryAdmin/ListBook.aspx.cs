@@ -23,7 +23,7 @@ namespace Library.LibraryAdmin
         private void FillData()
         {
             var books = Book.Get(); // טוען את כל הספרים
-            Repeater1.DataSource = books;  // תוודא שהשימוש הוא בשם נכון של הרפיטר
+            Repeater1.DataSource = books;  
             Repeater1.DataBind();
         }
     }

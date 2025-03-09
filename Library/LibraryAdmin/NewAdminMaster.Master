@@ -393,6 +393,10 @@
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/apps.js"></script>
+    
+  <asp:ContentPlaceHolder ID="ScriptCnt" runat="server">
+  </asp:ContentPlaceHolder>  <!-- כאן תוכל להוסיף סקריפטים -->
+  
     <asp:ContentPlaceHolder ID="FooterCnt" runat="server"></asp:ContentPlaceHolder>  
 
      <asp:ContentPlaceHolder ID="UnderFooter" runat="server"></asp:ContentPlaceHolder>  

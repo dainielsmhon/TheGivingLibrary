@@ -42,6 +42,15 @@ namespace Library.LibraryAdmin
         protected global::System.Web.UI.WebControls.TextBox TxtAuthor;
 
         /// <summary>
+        /// ddlSuppliers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSuppliers;
+
+        /// <summary>
         /// Year control.
         /// </summary>
         /// <remarks>
