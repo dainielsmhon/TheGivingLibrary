@@ -16,7 +16,7 @@
                 <asp:DropDownList ID="ddlSuppliers" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSuppliers_SelectedIndexChanged">
                     <asp:ListItem Text="בחר ספק" Value="0"></asp:ListItem>
                 </asp:DropDownList>
-
+                 
 
                 <br />
                 <br />
