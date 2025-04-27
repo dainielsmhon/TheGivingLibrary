@@ -1,0 +1,1 @@
+﻿SELECT * FROM T_Books WHERE BookId = 101

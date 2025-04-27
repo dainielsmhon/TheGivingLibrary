@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.vsidx
+/Library/App_Data/Library.mdf
+/Library/App_Data/Library_log.ldf
