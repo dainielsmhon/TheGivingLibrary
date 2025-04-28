@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LibraryAdmin/NewAdminMaster.Master" AutoEventWireup="true" CodeBehind="listOrder.aspx.cs" Inherits="Library.LibraryAdmin.listOrder" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
-        
-        <link rel="stylesheet" href="assets/css/StyleD2.css">
+                <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
+<link rel="stylesheet" href="css/StyleD2.css">
 
 
 </asp:Content>
@@ -59,8 +58,8 @@
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="FooterCnt" runat="server">
-    <script src='js/jquery.dataTables.min.js'></script>
-   <script src='js/dataTables.bootstrap4.min.js'></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap4.min.js"></script>
     <script>
         var ans = true;
         function ConfirmDelete() {
