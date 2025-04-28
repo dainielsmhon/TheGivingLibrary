@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <link rel="stylesheet" href="assets/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="assets/css/StyleD2.css">
+<%--<link rel="stylesheet" href="assets/css/StyleD2.css">--%>
 
 
 
