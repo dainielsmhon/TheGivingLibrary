@@ -282,6 +282,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="LibraryAdmin\assets\images\library-bg2.jpg" />
+    <Content Include="LibraryAdmin\assets\images\logo-gpt.jpg" />
     <Content Include="LibraryAdmin\assets\images\logo.png" />
     <Content Include="LibraryAdmin\assets\products\p1.jpg" />
     <Content Include="LibraryAdmin\assets\products\p2.jpg" />

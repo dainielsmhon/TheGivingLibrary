@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic; // שימוש ב-List<>
+using System.Collections.Generic;
 using System.Web.UI;
 using BLL; // שימוש במחלקות Book ו-Borrow
 
@@ -117,11 +117,15 @@ namespace Library.LibraryAdmin
                 txtName.Text = "";
                 txtEmail.Text = "";
                 txtMessage.Text = "";
+
+                // כאן מוצגת ההודעה הצפה
+                ScriptManager.RegisterStartupScript(this, GetType(), "showPush", "showSuccessPush('ההודעה נשלחה בהצלחה ✅');", true);
             }
             else
             {
                 lblContactResult.Text = "אירעה שגיאה בשליחת ההודעה.";
                 lblContactResult.CssClass = "alert alert-danger mt-3 d-block";
+                ScriptManager.RegisterStartupScript(this, GetType(), "showPush", "showErrorPush('שגיאה בשליחת ההודעה ❌');", true);
             }
         }
     }

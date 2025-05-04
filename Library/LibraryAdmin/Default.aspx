@@ -48,7 +48,7 @@
             </asp:Repeater>
         </div>
 
-        <!-- שתי עוגות בשורה -->
+        <!-- תרשימים -->
         <div class="row mb-5">
             <div class="col-md-6 text-center">
                 <h4>סטטיסטיקת זמינות</h4>
@@ -60,7 +60,6 @@
             </div>
         </div>
 
-        <!-- עוגת TOP 5 סופרים במרכז -->
         <div class="row mb-5">
             <div class="col-md-6 offset-md-3 text-center">
                 <h4>5 הסופרים הכי מושאלים</h4>
@@ -113,7 +112,6 @@
         };
 
         function renderAllCharts() {
-            // זמינות
             var available = <%= ViewState["TotalAvailable"] ?? 0 %>;
             var borrowed = <%= ViewState["TotalBorrowed"] ?? 0 %>;
 
@@ -132,7 +130,6 @@
                 plugins: [ChartDataLabels]
             });
 
-            // TOP 10
             new Chart(document.getElementById('topBooksChart'), {
                 type: 'pie',
                 data: {
@@ -151,7 +148,6 @@
                 plugins: [ChartDataLabels]
             });
 
-            // TOP סופרים
             new Chart(document.getElementById('topAuthorsChart'), {
                 type: 'pie',
                 data: {
@@ -172,5 +168,53 @@
         }
 
         window.onload = renderAllCharts;
+
+        function showSuccessPush(message) {
+            const toast = document.createElement('div');
+            toast.innerText = message || 'הפעולה הצליחה ✅';
+            toast.style.position = 'fixed';
+            toast.style.top = '20px';
+            toast.style.right = '20px';
+            toast.style.backgroundColor = '#28a745';
+            toast.style.color = 'white';
+            toast.style.padding = '15px 25px';
+            toast.style.borderRadius = '10px';
+            toast.style.boxShadow = '0 0 10px rgba(0,0,0,0.3)';
+            toast.style.zIndex = '9999';
+            toast.style.opacity = '0';
+            toast.style.transition = 'opacity 0.5s ease-in-out';
+
+            document.body.appendChild(toast);
+
+            setTimeout(() => { toast.style.opacity = '1'; }, 100);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 500);
+            }, 4000);
+        }
+
+        function showErrorPush(message) {
+            const toast = document.createElement('div');
+            toast.innerText = message || 'אירעה שגיאה ❌';
+            toast.style.position = 'fixed';
+            toast.style.top = '20px';
+            toast.style.right = '20px';
+            toast.style.backgroundColor = '#dc3545';
+            toast.style.color = 'white';
+            toast.style.padding = '15px 25px';
+            toast.style.borderRadius = '10px';
+            toast.style.boxShadow = '0 0 10px rgba(0,0,0,0.3)';
+            toast.style.zIndex = '9999';
+            toast.style.opacity = '0';
+            toast.style.transition = 'opacity 0.5s ease-in-out';
+
+            document.body.appendChild(toast);
+
+            setTimeout(() => { toast.style.opacity = '1'; }, 100);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 500);
+            }, 4000);
+        }
     </script>
 </asp:Content>

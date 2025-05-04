@@ -353,3 +353,29 @@ tr.status-0 {
     background-color: #d9fdd3;
 }
 /* הוחזר */
+.topnav {
+    direction: rtl;
+    text-align: right;
+}
+.sidebar-left {
+    background-color: rgba(255, 255, 255, 0.85) !important; /* שקוף כמו הטבלה */
+    backdrop-filter: blur(4px); /* טשטוש עדין ברקע */
+}
+.sidebar-left {
+    background-color: rgba(255, 255, 255, 0.85) !important; /* שקיפות */
+    backdrop-filter: blur(3px); /* טשטוש עדין */
+    -webkit-backdrop-filter: blur(3px); /* תמיכה בכרום */
+    box-shadow: none !important; /* הסר צל אם יש */
+    border-right: none !important; /* הסר גבול ימין אם צריך */
+}
+body .sidebar-left {
+    background-color: rgba(255, 255, 255, 0.85) !important; /* שקיפות עדינה */
+    backdrop-filter: blur(4px) !important; /* טשטוש רקע */
+    -webkit-backdrop-filter: blur(4px) !important; /* תמיכה בדפדפנים ישנים */
+}
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}

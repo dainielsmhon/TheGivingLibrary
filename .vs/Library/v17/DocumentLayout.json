@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\danie\\Downloads\\Library1\\Library\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\libraryadmin\\listborrow.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\listborrow.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\addorder.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\addorder.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\listborrow.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\listborrow.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\libraryadmin\\newadminmaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\newadminmaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\listorder.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\listorder.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\css\\styled2.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\css\\styled2.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\listorder.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\listorder.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\userlist.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\userlist.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\listbook.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
@@ -34,63 +34,56 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddOrder.aspx",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\AddOrder.aspx",
+              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\AddOrder.aspx",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\AddOrder.aspx",
+              "RelativeToolTip": "Library\\LibraryAdmin\\AddOrder.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-05-04T18:52:41.412Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "listOrder.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\listOrder.aspx.cs",
-              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\listOrder.aspx.cs",
-              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\listOrder.aspx.cs",
-              "RelativeToolTip": "Library\\LibraryAdmin\\listOrder.aspx.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAA6wEIAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T19:15:00.233Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ListBorrow.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\ListBorrow.aspx.cs",
-              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\ListBorrow.aspx.cs",
-              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\ListBorrow.aspx.cs",
-              "RelativeToolTip": "Library\\LibraryAdmin\\ListBorrow.aspx.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAiwDYAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T19:02:51.036Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ListBorrow.aspx",
-              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\ListBorrow.aspx",
-              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\ListBorrow.aspx",
-              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\ListBorrow.aspx",
-              "RelativeToolTip": "Library\\LibraryAdmin\\ListBorrow.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-04-25T13:45:01.814Z",
-              "EditorCaption": ""
+              "Title": "StyleD2.css",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\css\\StyleD2.css",
+              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\css\\StyleD2.css",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\css\\StyleD2.css",
+              "RelativeToolTip": "Library\\LibraryAdmin\\css\\StyleD2.css",
+              "ViewState": "AQIAAF4BAAAAAAAAAAAuwH0BAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-04T18:29:44.285Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "UserList.aspx",
-              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\UserList.aspx",
-              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\UserList.aspx",
-              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\UserList.aspx",
-              "RelativeToolTip": "Library\\LibraryAdmin\\UserList.aspx",
+              "Title": "Default.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\Default.aspx.cs",
+              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\Default.aspx.cs",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\Default.aspx.cs",
+              "RelativeToolTip": "Library\\LibraryAdmin\\Default.aspx.cs",
+              "ViewState": "AQIAAGQAAAAAAAAAAAAUwIIAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T17:30:52.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\Default.aspx",
+              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\Default.aspx",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\Default.aspx",
+              "RelativeToolTip": "Library\\LibraryAdmin\\Default.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-04-28T18:56:06.076Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-04T17:07:53.736Z"
             },
             {
               "$type": "Document",
@@ -100,20 +93,21 @@
               "RelativeDocumentMoniker": "Library\\LibraryAdmin\\ListBook.aspx",
               "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\ListBook.aspx",
               "RelativeToolTip": "Library\\LibraryAdmin\\ListBook.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-04-28T18:34:29.983Z"
+              "WhenOpened": "2025-05-04T17:06:04.213Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "listOrder.aspx",
-              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\listOrder.aspx",
-              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\listOrder.aspx",
-              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\listOrder.aspx",
-              "RelativeToolTip": "Library\\LibraryAdmin\\listOrder.aspx",
+              "DocumentIndex": 1,
+              "Title": "NewAdminMaster.Master",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\NewAdminMaster.Master",
+              "RelativeDocumentMoniker": "Library\\LibraryAdmin\\NewAdminMaster.Master",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryAdmin\\NewAdminMaster.Master",
+              "RelativeToolTip": "Library\\LibraryAdmin\\NewAdminMaster.Master",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-04-25T13:45:02.692Z",
+              "WhenOpened": "2025-05-04T17:04:18.91Z",
               "EditorCaption": ""
             }
           ]
