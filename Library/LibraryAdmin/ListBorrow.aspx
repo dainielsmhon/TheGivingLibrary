@@ -77,6 +77,7 @@
                     tbl.DataTable({
                         paging: true,
                         autoWidth: true,
+                        ordering: false,
                         language: {
                             url: 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/he.json'
                         }

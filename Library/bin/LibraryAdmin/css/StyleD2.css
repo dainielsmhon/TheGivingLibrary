@@ -345,3 +345,11 @@ tr.status-0 {
             color: #3366cc;
         }
 /* ====== סוף עיצוב כפתור ותפריט נגישות ====== */
+.status-0 {
+    background-color: #fff6da;
+}
+/* מושאל */
+.status-1 {
+    background-color: #d9fdd3;
+}
+/* הוחזר */
