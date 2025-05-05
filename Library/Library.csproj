@@ -262,6 +262,155 @@
     <Content Include="js\tinycolor-min.js" />
     <Content Include="js\topojson.min.js" />
     <Content Include="js\uppy.min.js" />
+    <Content Include="LibraryUser\AddBorrow.aspx" />
+    <Content Include="LibraryUser\AddBorrow1.aspx" />
+    <Content Include="LibraryUser\AddOrder.aspx" />
+    <Content Include="LibraryUser\AddOrder1.aspx" />
+    <Content Include="LibraryUser\AddReturn.aspx" />
+    <Content Include="LibraryUser\AddReturn1.aspx" />
+    <Content Include="LibraryUser\assets\avatars\face-1.jpg" />
+    <Content Include="LibraryUser\assets\avatars\face-2.jpg" />
+    <Content Include="LibraryUser\assets\avatars\face-3.jpg" />
+    <Content Include="LibraryUser\assets\avatars\face-4.jpg" />
+    <Content Include="LibraryUser\assets\avatars\face-5.jpg" />
+    <Content Include="LibraryUser\assets\avatars\face-6.jpg" />
+    <Content Include="LibraryUser\assets\avatars\face-7.jpg" />
+    <Content Include="LibraryUser\assets\avatars\face-8.jpg" />
+    <Content Include="LibraryUser\assets\images\harry_potter_cover.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LibraryUser\assets\images\library-bg.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LibraryUser\assets\images\library-bg2.jpg" />
+    <Content Include="LibraryUser\assets\images\logo-gpt.jpg" />
+    <Content Include="LibraryUser\assets\images\logo.png" />
+    <Content Include="LibraryUser\assets\products\p1.jpg" />
+    <Content Include="LibraryUser\assets\products\p2.jpg" />
+    <Content Include="LibraryUser\assets\products\p3.jpg" />
+    <Content Include="LibraryUser\assets\products\p4.jpg" />
+    <Content Include="LibraryUser\auth-confirm.html" />
+    <Content Include="LibraryUser\auth-login-half.html" />
+    <Content Include="LibraryUser\auth-login.html" />
+    <Content Include="LibraryUser\auth-register.html" />
+    <Content Include="LibraryUser\auth-resetpw.html" />
+    <Content Include="LibraryUser\calendar.html" />
+    <Content Include="LibraryUser\chart-apexcharts.html" />
+    <Content Include="LibraryUser\chart-chartjs.html" />
+    <Content Include="LibraryUser\chart-inline.html" />
+    <Content Include="LibraryUser\contacts-grid.html" />
+    <Content Include="LibraryUser\contacts-list.html" />
+    <Content Include="LibraryUser\contacts-new.html" />
+    <Content Include="LibraryUser\css\apexcharts.css" />
+    <Content Include="LibraryUser\css\app-dark.css" />
+    <Content Include="LibraryUser\css\app-light.css" />
+    <Content Include="LibraryUser\css\app-rtl.css" />
+    <Content Include="LibraryUser\css\bootstrap-datepicker.css" />
+    <Content Include="LibraryUser\css\dataTables.bootstrap4.css" />
+    <Content Include="LibraryUser\css\daterangepicker.css" />
+    <Content Include="LibraryUser\css\dropzone.css" />
+    <Content Include="LibraryUser\css\dropzone.min.css" />
+    <Content Include="LibraryUser\css\feather.css" />
+    <Content Include="LibraryUser\css\fullcalendar.css" />
+    <Content Include="LibraryUser\css\jquery.steps.css" />
+    <Content Include="LibraryUser\css\jquery.timepicker.css" />
+    <Content Include="LibraryUser\css\perfect-scrollbar.css" />
+    <Content Include="LibraryUser\css\quill.snow.css" />
+    <Content Include="LibraryUser\css\select2-bootstrap4.css" />
+    <Content Include="LibraryUser\css\select2.css" />
+    <Content Include="LibraryUser\css\simplebar.css" />
+    <Content Include="LibraryUser\css\StyleD2.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LibraryUser\css\uppy.min.css" />
+    <Content Include="LibraryUser\dashboard-analytics.html" />
+    <Content Include="LibraryUser\dashboard-saas.html" />
+    <Content Include="LibraryUser\dashboard-sales.html" />
+    <Content Include="LibraryUser\dashboard-system.html" />
+    <Content Include="LibraryUser\datamaps.html" />
+    <Content Include="LibraryUser\Default.aspx" />
+    <Content Include="LibraryUser\Default1.aspx" />
+    <Content Include="LibraryUser\files-grid.html" />
+    <Content Include="LibraryUser\files-list.html" />
+    <Content Include="LibraryUser\fonts\feather.svg" />
+    <Content Include="LibraryUser\form_advanced.html" />
+    <Content Include="LibraryUser\form_elements.html" />
+    <Content Include="LibraryUser\form_layouts.html" />
+    <Content Include="LibraryUser\form_upload.html" />
+    <Content Include="LibraryUser\form_validation.html" />
+    <Content Include="LibraryUser\form_wizard.html" />
+    <Content Include="LibraryUser\index-boxed.html" />
+    <Content Include="LibraryUser\index-horizontal.html" />
+    <Content Include="LibraryUser\index-vertical.html" />
+    <Content Include="LibraryUser\index.html" />
+    <Content Include="LibraryUser\js\apexcharts.custom.js" />
+    <Content Include="LibraryUser\js\apexcharts.min.js" />
+    <Content Include="LibraryUser\js\apps.js" />
+    <Content Include="LibraryUser\js\bootstrap-datepicker.min.js" />
+    <Content Include="LibraryUser\js\bootstrap.min.js" />
+    <Content Include="LibraryUser\js\Chart.min.js" />
+    <Content Include="LibraryUser\js\config.js" />
+    <Content Include="LibraryUser\js\d3.min.js" />
+    <Content Include="LibraryUser\js\datamaps-zoomto.js" />
+    <Content Include="LibraryUser\js\datamaps.all.min.js" />
+    <Content Include="LibraryUser\js\datamaps.custom.js" />
+    <Content Include="LibraryUser\js\dataTables.bootstrap4.min.js" />
+    <Content Include="LibraryUser\js\daterangepicker.js" />
+    <Content Include="LibraryUser\js\dropzone.min.js" />
+    <Content Include="LibraryUser\js\fullcalendar.custom.js" />
+    <Content Include="LibraryUser\js\fullcalendar.js" />
+    <Content Include="LibraryUser\js\gauge.min.js" />
+    <Content Include="LibraryUser\js\jquery.dataTables.min.js" />
+    <Content Include="LibraryUser\js\jquery.mask.min.js" />
+    <Content Include="LibraryUser\js\jquery.min.js" />
+    <Content Include="LibraryUser\js\jquery.sparkline.min.js" />
+    <Content Include="LibraryUser\js\jquery.steps.min.js" />
+    <Content Include="LibraryUser\js\jquery.stickOnScroll.js" />
+    <Content Include="LibraryUser\js\jquery.timepicker.js" />
+    <Content Include="LibraryUser\js\jquery.validate.min.js" />
+    <Content Include="LibraryUser\js\moment.min.js" />
+    <Content Include="LibraryUser\js\perfect-scrollbar.min.js" />
+    <Content Include="LibraryUser\js\popper.min.js" />
+    <Content Include="LibraryUser\js\quill.min.js" />
+    <Content Include="LibraryUser\js\select2.min.js" />
+    <Content Include="LibraryUser\js\simplebar.min.js" />
+    <Content Include="LibraryUser\js\tinycolor-min.js" />
+    <Content Include="LibraryUser\js\topojson.min.js" />
+    <Content Include="LibraryUser\js\uppy.min.js" />
+    <Content Include="LibraryUser\ListBook.aspx" />
+    <Content Include="LibraryUser\ListBook1.aspx" />
+    <Content Include="LibraryUser\ListBorrow.aspx" />
+    <Content Include="LibraryUser\ListBorrow1.aspx" />
+    <Content Include="LibraryUser\listOrder.aspx" />
+    <Content Include="LibraryUser\listOrder1.aspx" />
+    <Content Include="LibraryUser\page-404.html" />
+    <Content Include="LibraryUser\page-500.html" />
+    <Content Include="LibraryUser\page-blank.html" />
+    <Content Include="LibraryUser\page-invoice.html" />
+    <Content Include="LibraryUser\page-orders.html" />
+    <Content Include="LibraryUser\page-timeline.html" />
+    <Content Include="LibraryUser\profile-notification.html" />
+    <Content Include="LibraryUser\profile-security.html" />
+    <Content Include="LibraryUser\profile-settings.html" />
+    <Content Include="LibraryUser\profile.html" />
+    <Content Include="LibraryUser\Register.aspx" />
+    <Content Include="LibraryUser\support-center.html" />
+    <Content Include="LibraryUser\support-faqs.html" />
+    <Content Include="LibraryUser\support-ticket-detail.html" />
+    <Content Include="LibraryUser\support-tickets.html" />
+    <Content Include="LibraryUser\table_advanced.html" />
+    <Content Include="LibraryUser\table_basic.html" />
+    <Content Include="LibraryUser\table_datatables.html" />
+    <Content Include="LibraryUser\TestEmail.aspx" />
+    <Content Include="LibraryUser\ui-buttons.html" />
+    <Content Include="LibraryUser\ui-color.html" />
+    <Content Include="LibraryUser\ui-icons.html" />
+    <Content Include="LibraryUser\ui-modals.html" />
+    <Content Include="LibraryUser\ui-notification.html" />
+    <Content Include="LibraryUser\ui-progress.html" />
+    <Content Include="LibraryUser\ui-tabs-accordion.html" />
+    <Content Include="LibraryUser\ui-typograpy.html" />
+    <Content Include="LibraryUser\widgets.html" />
     <Content Include="LibraryAdmin\AddBook.aspx" />
     <Content Include="LibraryAdmin\AddBorrow.aspx" />
     <Content Include="LibraryAdmin\AddOrder.aspx" />
@@ -282,6 +431,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="LibraryAdmin\assets\images\library-bg2.jpg" />
+    <Content Include="LibraryAdmin\assets\images\logo-gpt.jpg" />
     <Content Include="LibraryAdmin\assets\images\logo.png" />
     <Content Include="LibraryAdmin\assets\products\p1.jpg" />
     <Content Include="LibraryAdmin\assets\products\p2.jpg" />
@@ -440,6 +590,118 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LibraryUser\AddBorrow.aspx.cs">
+      <DependentUpon>AddBorrow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\AddBorrow.aspx.designer.cs">
+      <DependentUpon>AddBorrow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\AddBorrow1.aspx.cs">
+      <DependentUpon>AddBorrow1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\AddBorrow1.aspx.designer.cs">
+      <DependentUpon>AddBorrow1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\AddOrder.aspx.cs">
+      <DependentUpon>AddOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\AddOrder.aspx.designer.cs">
+      <DependentUpon>AddOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\AddOrder1.aspx.cs">
+      <DependentUpon>AddOrder1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\AddOrder1.aspx.designer.cs">
+      <DependentUpon>AddOrder1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\AddReturn.aspx.cs">
+      <DependentUpon>AddReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\AddReturn.aspx.designer.cs">
+      <DependentUpon>AddReturn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\AddReturn1.aspx.cs">
+      <DependentUpon>AddReturn1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\AddReturn1.aspx.designer.cs">
+      <DependentUpon>AddReturn1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\Default1.aspx.cs">
+      <DependentUpon>Default1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\Default1.aspx.designer.cs">
+      <DependentUpon>Default1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\ListBook.aspx.cs">
+      <DependentUpon>ListBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\ListBook.aspx.designer.cs">
+      <DependentUpon>ListBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\ListBook1.aspx.cs">
+      <DependentUpon>ListBook1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\ListBook1.aspx.designer.cs">
+      <DependentUpon>ListBook1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\ListBorrow.aspx.cs">
+      <DependentUpon>ListBorrow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\ListBorrow.aspx.designer.cs">
+      <DependentUpon>ListBorrow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\ListBorrow1.aspx.cs">
+      <DependentUpon>ListBorrow1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\ListBorrow1.aspx.designer.cs">
+      <DependentUpon>ListBorrow1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\listOrder.aspx.cs">
+      <DependentUpon>listOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\listOrder.aspx.designer.cs">
+      <DependentUpon>listOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\listOrder1.aspx.cs">
+      <DependentUpon>listOrder1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\listOrder1.aspx.designer.cs">
+      <DependentUpon>listOrder1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser\TestEmail.aspx.cs">
+      <DependentUpon>TestEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\TestEmail.aspx.designer.cs">
+      <DependentUpon>TestEmail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LibraryAdmin\AddBook.aspx.cs">
       <DependentUpon>AddBook.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -538,6 +800,13 @@
     <Compile Include="LibraryAdmin\NewAdminMaster.Master.designer.cs">
       <DependentUpon>NewAdminMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="LibraryUser\UserMaster.Master.cs">
+      <DependentUpon>UserMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryUser\UserMaster.Master.designer.cs">
+      <DependentUpon>UserMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -583,6 +852,14 @@
     <Content Include="libmongocrypt.so" />
     <Content Include="libmongocrypt.dylib" />
     <Content Include="LibraryAdmin\js\i18n\he.json" />
+    <Content Include="LibraryUser\.DS_Store" />
+    <Content Include="LibraryUser\data\contacts.json" />
+    <Content Include="LibraryUser\data\eu.topo.json" />
+    <Content Include="LibraryUser\fonts\feather.eot" />
+    <Content Include="LibraryUser\fonts\feather.ttf" />
+    <Content Include="LibraryUser\fonts\feather.woff" />
+    <Content Include="LibraryUser\js\i18n\he.json" />
+    <Content Include="LibraryUser\UserMaster.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -594,6 +871,7 @@
   <ItemGroup>
     <Folder Include="images\" />
     <Folder Include="LibraryAdmin\js\App_LocalResources\" />
+    <Folder Include="LibraryUser\js\App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.SecurityToken.3.7.100.14\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
