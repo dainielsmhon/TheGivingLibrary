@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\danie\\Downloads\\Library1\\Library\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\libraryadmin\\listborrow.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\listborrow.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\listborrow.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\listborrow.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\listorder.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\listorder.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\listorder.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\listorder.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\userlist.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\userlist.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryadmin\\listbook.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryadmin\\listbook.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
