@@ -6,7 +6,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
-using System.Web.Services.Description;
 using System.Web.SessionState;
 
 namespace Library
@@ -16,87 +15,48 @@ namespace Library
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            
             User tmp;
-            
 
-            string ConnStr;
-            string Sql = " select * from t_Users";//הגדרת מחרוזת עם משפט שאילתה 
+            // הגדרת מחרוזת התחברות מתוך קובץ הקונפיג
+            string ConnStr = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
 
-            //שליפת מחרוזת ההתחברות מתוך קובץ הקופיג
-            ConnStr = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
-            //ניצור אובייקט מסוג חיבור /צינור לבסיס הנתונים
-            // SqlConnection Conn=new SqlConnection(ConnStr);
+            // הגדרת שאילתה לשליפת כל המשתמשים מהטבלה
+            string Sql = "SELECT * FROM t_Users";
 
-            // ניצור אובייקט מסוג חיבור / צינור לבסיס הנתונים
+            // יצירת אובייקט חיבור לבסיס הנתונים
             SqlConnection Conn = new SqlConnection();
-            //הגדרת מחרוזת התחברות עבור אובייקט הצינור 
-            Conn.ConnectionString = ConnStr;
-            Conn.Open(); //פתיחת הצינור /החבירו לבסיס הנתונים
+            Conn.ConnectionString = ConnStr; // הצמדת מחרוזת ההתחברות
+            Conn.Open(); // פתיחת החיבור
 
-            //הגדרת אובייקט מסוג פקודה של שאילתה
+            // יצירת אובייקט לפקודת SQL
             SqlCommand Cmd = new SqlCommand();
-            Cmd.Connection = Conn;   //הגדרת הצינור בו ישתמש אובייקט הפקודה 
-            Cmd.CommandText = Sql;// הגדרת השאילתה אותה עלינו לבצע 
+            Cmd.Connection = Conn; // הצמדת הפקודה לחיבור
+            Cmd.CommandText = Sql; // הגדרת שאילתה לביצוע
 
-            SqlDataReader Dr;// הגדרת קורה נתונים משחזרו משאילתה סלקט
+            // יצירת קורא נתונים שיבצע את הקריאה בפועל
+            SqlDataReader Dr = Cmd.ExecuteReader();
 
-            Dr = Cmd.ExecuteReader();//הפעלת השאילתה והכוונת קורא הנתונים לתוצאות שחזרו
+            // רשימה לאחסון כל המשתמשים שנשלפו מהדאטהבייס
+            List<User> LstUsers = new List<User>();
 
-            List<User> LstProd = new List<User>();
-
-
-            while (Dr.Read())// נבצע לולאה שעוברת רשומה רשומה על התוצאות שחזרו 
-                             //אם קיים תחזיר אמת אחרת שקר 
+            // מעבר על כל שורה שחזרה מהשאילתה
+            while (Dr.Read())
             {
-                tmp = new User()//יצירת אובייקט מסוג מוצר מאותחל בערכים של כל אחד מהמוצרים
+                tmp = new User()
                 {
                     UserId = (int)Dr["UserId"],
                     UserName = Dr["UserName"] + "",
                     UserPass = Dr["UserPass"] + "",
                     Email = Dr["Email"] + ""
                 };
-                LstProd.Add(tmp);
-            }
-            Dr.Close();
-
-
-            {
-                //הגדרת אובייקט מסוג פקודה של שאילתה
-                Sql = "select * from t_Users";
-                Cmd.CommandText = Sql;// הגדרת השאילתה אותה עלינו לבצע 
-
-
-                Dr = Cmd.ExecuteReader();//הפעלת השאילתה והכוונת קורא הנתונים לתוצאות שחזרו
-
-                List<User> LstUser = new List<User>();
-
-
-                while (Dr.Read())// נבצע לולאה שעוברת רשומה רשומה על התוצאות שחזרו 
-                                 //אם קיים תחזיר אמת אחרת שקר 
-                {
-                    tmp = new User()//יצירת אובייקט מסוג מוצר מאותחל בערכים של כל אחד מהמוצרים
-                    {
-                        UserId = (int)Dr["UserId"],
-                        Email = Dr["Email"] + "",
-                        UserPass = Dr["UserPass"] + "",
-                        UserName = Dr["UserName"] + ""
-
-                    };
-                    LstProd.Add(tmp);
-                }
-                Dr.Close();
-                Application["User"] = LstUser;
-                Conn.Close();
+                LstUsers.Add(tmp); // הוספת המשתמש לרשימה
             }
 
+            Dr.Close(); // סגירת הקורא
+            Conn.Close(); // סגירת החיבור
 
-         
-
-
-          
-           
-
+            // שמירת הרשימה בזיכרון של האפליקציה (זמין בכל זמן)
+            Application["User"] = LstUsers;
         }
 
         protected void Session_Start(object sender, EventArgs e)
@@ -128,5 +88,10 @@ namespace Library
         {
 
         }
+
+      
+            // פונקציה שפועלת כאשר האפליקציה מתחילה (טעינה ראשונית של האתר)
+     
     }
+
 }

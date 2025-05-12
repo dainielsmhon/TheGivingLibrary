@@ -1,40 +1,49 @@
-﻿using BLL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+using Amazon.Runtime.Internal.Util;
+using DAL;
+using Library.LibraryAdmin;
 
 namespace Library
 {
-    public partial class LogIn : System.Web.UI.Page
+    public partial class Login : Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void btnLogin_Click(object sender, EventArgs e)
         {
-            //יצירת אובייקט מסוג לקוח עם שם משתמש והסיסמה שהוזנו 
-            
-                var LstUser=(List<User>)Application["User"];
-                for (int i = 0; i < LstUser.Count; i++) 
-            { 
-            
-                if (TxtEmail.Text == LstUser[i].Email && TxtPass.Text == LstUser[i].UserPass + "")
-                {
-                    Session["Login"] = true;
-                    Response.Redirect("/Defalut");
-                }
+            string email = txtEmail.Text.Trim();
+            string password = txtPassword.Text;
+
+            string hashedPassword = HashPassword(password);
+
+            var user = UserDAL.Get().Find(u => u.Email == email && u.UserPass == hashedPassword);
+
+            if (user != null)
+            {
+                Session["User"] = user;
+
+                if (user.Email == "danielsimhon931@gmail.com")
+                    Response.Redirect("~/LibraryAdmin/Default.aspx");
                 else
-                {
-                    LtMsg2.Text = "שם וססמה אינם נכונים";
-                    Response.Redirect("Register.aspx");
-                }
+                    Response.Redirect("~/LibraryUser/Default.aspx");
             }
-           
+            else
+            {
+                lblMessage.Text = "אימייל או סיסמה שגויים";
+            }
+
         }
 
-        protected void BtnLogin_Click(object sender, EventArgs e)
-        {
+        private string HashPassword(string password)
 
+        {
+            using (SHA256 sha = SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(password);
+                byte[] hash = sha.ComputeHash(bytes);
+                return BitConverter.ToString(hash).Replace("-", "").ToLower();
+            }
         }
     }
 }
