@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\danie\\Downloads\\Library1\\Library\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\libraryuser\\addorder.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryuser\\addorder.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\libraryuser\\addorder1.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryuser\\addorder1.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\register.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\register.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddOrder.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryUser\\AddOrder.aspx.cs",
-              "RelativeDocumentMoniker": "Library\\LibraryUser\\AddOrder.aspx.cs",
-              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryUser\\AddOrder.aspx.cs",
-              "RelativeToolTip": "Library\\LibraryUser\\AddOrder.aspx.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAqwGwAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T19:57:48.465Z",
+              "DocumentIndex": 2,
+              "Title": "Register.aspx",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\Register.aspx",
+              "RelativeDocumentMoniker": "Library\\Register.aspx",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\Register.aspx",
+              "RelativeToolTip": "Library\\Register.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-05-19T18:21:13.862Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AddOrder1.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryUser\\AddOrder1.aspx.cs",
-              "RelativeDocumentMoniker": "Library\\LibraryUser\\AddOrder1.aspx.cs",
-              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryUser\\AddOrder1.aspx.cs",
-              "RelativeToolTip": "Library\\LibraryUser\\AddOrder1.aspx.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Title": "LogIn.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LogIn.aspx.cs",
+              "RelativeDocumentMoniker": "Library\\LogIn.aspx.cs",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LogIn.aspx.cs",
+              "RelativeToolTip": "Library\\LogIn.aspx.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAqwEIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T19:57:46.418Z",
+              "WhenOpened": "2025-05-18T18:18:41.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LogIn.aspx",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LogIn.aspx",
+              "RelativeDocumentMoniker": "Library\\LogIn.aspx",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LogIn.aspx",
+              "RelativeToolTip": "Library\\LogIn.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-05-18T18:10:30.261Z",
               "EditorCaption": ""
             }
           ]

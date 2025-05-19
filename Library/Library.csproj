@@ -232,6 +232,9 @@
     <Content Include="css\select2-bootstrap4.css" />
     <Content Include="css\select2.css" />
     <Content Include="css\simplebar.css" />
+    <Content Include="css\StyleD2.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="css\uppy.min.css" />
     <Content Include="fonts\feather.svg" />
     <Content Include="Global.asax" />
@@ -441,7 +444,7 @@
     <Content Include="LibraryAdmin\auth-login.html" />
     <Content Include="LibraryAdmin\auth-register.html" />
     <Content Include="LibraryAdmin\auth-resetpw.html" />
-    <Content Include="LibraryAdmin\css\StyleD2.css">
+    <Content Include="LibraryAdmin\css\StyleD3.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="LibraryAdmin\ListBook.aspx" />

@@ -55,6 +55,7 @@ namespace Library.LibraryAdmin
                 TxtPhone.Text = Tmp.Phone;
                 TxtAdress.Text = Tmp.Adress;
                 TxtJoinDate.Text = Tmp.JoinDate.ToString("yyyy-MM-dd");
+                ChkIsAdmin.Checked = Tmp.IsAdmin;
 
             }
         }
@@ -72,7 +73,8 @@ namespace Library.LibraryAdmin
                 UserPass = TxtUserPass.Text,
                 Phone = TxtPhone.Text,
                 Adress = TxtAdress.Text,
-                JoinDate = DateTime.Parse(TxtJoinDate.Text)
+                JoinDate = DateTime.Parse(TxtJoinDate.Text),
+                IsAdmin = ChkIsAdmin.Checked
             };
             
             Tmp.Save();

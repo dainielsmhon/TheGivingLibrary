@@ -10,8 +10,7 @@ namespace Library.LibraryUser
 {
     public partial class ListBook : System.Web.UI.Page
     {
-        public partial class ListBook : Page
-        {
+        
             protected void Page_Load(object sender, EventArgs e)
             {
                 if (!IsPostBack)
@@ -29,5 +28,5 @@ namespace Library.LibraryUser
                 Repeater1.DataBind();
             }
         }
-    }
+    
 }

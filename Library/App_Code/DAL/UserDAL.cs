@@ -28,11 +28,12 @@ namespace DAL
                         Email = Dt.Rows[0]["Email"] + "",
                         Phone = Dt.Rows[0]["Phone"] + "",
                         Adress = Dt.Rows[0]["Adress"] + "",
-                        JoinDate = DateTime.Parse(Dt.Rows[0]["JoinDate"] + "")
+                        JoinDate = DateTime.Parse(Dt.Rows[0]["JoinDate"] + ""),
+                        IsAdmin = bool.Parse(Dt.Rows[0]["IsAdmin"] + "")
                     };
                 }
             }
-            return Tmp; // אם לא מצא כלום מחזיר null
+            return Tmp;
         }
 
         public static List<User> Get()
@@ -53,7 +54,9 @@ namespace DAL
                         Email = Dt.Rows[i]["Email"] + "",
                         Phone = Dt.Rows[i]["Phone"] + "",
                         Adress = Dt.Rows[i]["Adress"] + "",
-                        JoinDate = DateTime.Parse(Dt.Rows[i]["JoinDate"] + "")
+                        JoinDate = DateTime.Parse(Dt.Rows[i]["JoinDate"] + ""),
+                        IsAdmin = bool.Parse(Dt.Rows[i]["IsAdmin"] + "")
+
                     };
                     LstTmp.Add(Tmp);
                 }
@@ -80,20 +83,21 @@ namespace DAL
                 string Sql = "";
                 if (Tmp.UserId == -1)
                 {
-                    Sql = $"INSERT INTO T_Users (Name,UserName,UserPass,Email,Phone,Adress,JoinDate) Values ";
-                    Sql += $" (N'{Tmp.Name}',N'{Tmp.UserName}',N'{Tmp.UserPass}',N'{Tmp.Email}',N'{Tmp.Phone}',N'{Tmp.Adress}','{Tmp.JoinDate.ToString("yyyy-MM-dd")}')";
+                    Sql = $"INSERT INTO T_Users (Name,UserName,UserPass,Email,Phone,Adress,JoinDate,IsAdmin) Values ";
+                    Sql += $" (N'{Tmp.Name}',N'{Tmp.UserName}',N'{Tmp.UserPass}',N'{Tmp.Email}',N'{Tmp.Phone}',N'{Tmp.Adress}','{Tmp.JoinDate:yyyy-MM-dd}', '{(Tmp.IsAdmin ? 1 : 0)}')";
                 }
                 else
                 {
-                    Sql = $"UPDATE T_Users set ";
+                    Sql = $"UPDATE T_Users SET ";
                     Sql += $"UserName=N'{Tmp.UserName}', ";
                     Sql += $"Name=N'{Tmp.Name}', ";
                     Sql += $"UserPass=N'{Tmp.UserPass}', ";
                     Sql += $"Email=N'{Tmp.Email}', ";
                     Sql += $"Phone=N'{Tmp.Phone}', ";
                     Sql += $"Adress=N'{Tmp.Adress}', ";
-                    Sql += $"JoinDate='{Tmp.JoinDate.ToString("yyyy-MM-dd")}' ";
-                    Sql += $" WHERE UserId={Tmp.UserId}";
+                    Sql += $"JoinDate='{Tmp.JoinDate:yyyy-MM-dd}', "; // ← פסיק כאן ✔️
+                    Sql += $"IsAdmin={(Tmp.IsAdmin ? 1 : 0)} ";         // ← אין פסיק בסוף!
+                    Sql += $"WHERE UserId={Tmp.UserId}";
                 }
                 RecCount = Db.ExecuteNonQuery(Sql);
             }

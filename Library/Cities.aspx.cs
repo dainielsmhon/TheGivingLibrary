@@ -18,7 +18,7 @@ namespace Library
         {
             if (!IsPostBack)
             {
-                string Search = "תל";
+               // string Search = "";
                 string EndPoint = "https://data.gov.il/api/3/action/datastore_search";
 
                 //יצירת אובייקט של שליחת בקשות

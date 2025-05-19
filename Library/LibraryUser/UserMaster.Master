@@ -28,6 +28,8 @@
     <!-- עיצוב אישי שלך -->
    
    <link rel="stylesheet" href="css/StyleD2.css">
+    <%--<link rel="stylesheet" href="../assets/css/StyleD2.css">--%>
+
 
 
 
@@ -73,7 +75,8 @@
     }
 </style>
 
-<body class="vertical  light rtl "
+<body class="vertical light rtl user"
+
        style="background-image: url('assets/images/library-bg2.jpg');
              background-size: cover;
              background-position: center;

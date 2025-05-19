@@ -20,8 +20,10 @@ namespace BLL
         public string Adress { get; set; }
         public DateTime Added { get; set; }
         public DateTime JoinDate { get; set; }
+        public bool IsAdmin { get; set; }
 
-        
+
+
 
         public int Save()//הוספה/עדכון
         {

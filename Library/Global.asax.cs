@@ -1,12 +1,12 @@
-﻿using BLL;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using BLL;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace Library
 {
@@ -17,29 +17,29 @@ namespace Library
         {
             User tmp;
 
-            // הגדרת מחרוזת התחברות מתוך קובץ הקונפיג
+            // שליפת מחרוזת ההתחברות מתוך Web.config
             string ConnStr = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
 
-            // הגדרת שאילתה לשליפת כל המשתמשים מהטבלה
+            // כתיבת שאילתה לשליפת כל המשתמשים מהטבלה
             string Sql = "SELECT * FROM t_Users";
 
-            // יצירת אובייקט חיבור לבסיס הנתונים
+            // יצירת חיבור למסד נתונים
             SqlConnection Conn = new SqlConnection();
             Conn.ConnectionString = ConnStr; // הצמדת מחרוזת ההתחברות
             Conn.Open(); // פתיחת החיבור
 
-            // יצירת אובייקט לפקודת SQL
+            // יצירת פקודת SQL
             SqlCommand Cmd = new SqlCommand();
-            Cmd.Connection = Conn; // הצמדת הפקודה לחיבור
-            Cmd.CommandText = Sql; // הגדרת שאילתה לביצוע
+            Cmd.Connection = Conn;      // חיבור בין הפקודה לצינור
+            Cmd.CommandText = Sql;      // הצמדת השאילתה לפקודה
 
-            // יצירת קורא נתונים שיבצע את הקריאה בפועל
+            // ביצוע הקריאה לנתונים
             SqlDataReader Dr = Cmd.ExecuteReader();
 
-            // רשימה לאחסון כל המשתמשים שנשלפו מהדאטהבייס
+            // יצירת רשימה לשמירת כל המשתמשים
             List<User> LstUsers = new List<User>();
 
-            // מעבר על כל שורה שחזרה מהשאילתה
+            // לולאה שמוסיפה כל משתמש לרשימה
             while (Dr.Read())
             {
                 tmp = new User()
@@ -49,13 +49,13 @@ namespace Library
                     UserPass = Dr["UserPass"] + "",
                     Email = Dr["Email"] + ""
                 };
-                LstUsers.Add(tmp); // הוספת המשתמש לרשימה
+                LstUsers.Add(tmp);
             }
 
             Dr.Close(); // סגירת הקורא
             Conn.Close(); // סגירת החיבור
 
-            // שמירת הרשימה בזיכרון של האפליקציה (זמין בכל זמן)
+            // שמירת הרשימה בזיכרון של האפליקציה (לגישה מכל הדפים)
             Application["User"] = LstUsers;
         }
 
@@ -88,10 +88,5 @@ namespace Library
         {
 
         }
-
-      
-            // פונקציה שפועלת כאשר האפליקציה מתחילה (טעינה ראשונית של האתר)
-     
     }
-
 }

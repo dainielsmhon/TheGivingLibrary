@@ -25,8 +25,10 @@
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
 
     <!-- עיצוב אישי שלך -->
-   
-   <link rel="stylesheet" href="css/StyleD2.css">
+
+    <link rel="stylesheet" href="css/StyleD2.css">
+  <%-- <link rel="stylesheet" href="../assets/css/StyleD2.css">--%>
+
 
 
 
@@ -72,7 +74,8 @@
     }
 </style>
 
-<body class="vertical  light rtl "
+<body class="vertical light rtl admin"
+
        style="background-image: url('assets/images/library-bg2.jpg');
              background-size: cover;
              background-position: center;
@@ -148,6 +151,7 @@
               <a class="navbar-brand d-flex align-items-center" href="Default.aspx" style="gap: 10px;">
                 <img src="assets/images/logo-gpt.jpg" alt="The Giving Library" style="height: 90px;">
                 <span style="font-size: 18px; font-weight: bold; color: #333;">דף הבית</span>
+                    <span style="font-size: 14px; font-weight: bold; color: #555;">הנהלה</span>
               </a>
             </div>
 
