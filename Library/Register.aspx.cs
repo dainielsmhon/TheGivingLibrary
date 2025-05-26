@@ -1,11 +1,5 @@
-﻿
-using System;
-using System.Security.Cryptography;
-using System.Text;
-using Amazon.Runtime.Internal.Util;
-using System.Xml.Linq;
+﻿using System;
 using DAL;
-using Library.LibraryAdmin;
 using BLL;
 
 namespace Library
@@ -16,60 +10,67 @@ namespace Library
         {
             try
             {
+                // בדיקה אם שדות חובה ריקים
                 if (string.IsNullOrWhiteSpace(TxtName.Text) ||
                     string.IsNullOrWhiteSpace(TxtEmail.Text) ||
-                    string.IsNullOrWhiteSpace(TxtPassword.Text))
+                    string.IsNullOrWhiteSpace(TxtPassword.Text) ||
+                    string.IsNullOrWhiteSpace(TxtConfirmPassword.Text))
                 {
                     lblMessage.Text = "אנא מלא את כל השדות.";
                     return;
                 }
 
+                // בדיקת תקינות אימייל
                 if (!TxtEmail.Text.Contains("@") || !TxtEmail.Text.Contains("."))
                 {
                     lblMessage.Text = "כתובת מייל לא תקינה.";
                     return;
                 }
 
-                if (TxtPassword.Text.Length < 6 ||
-                    TxtPassword.Text == "123456" ||
-                    TxtPassword.Text.ToLower() == "password")
+                // בדיקה שאורך הסיסמה לפחות 4 תווים
+                if (TxtPassword.Text.Length < 4)
                 {
-                    lblMessage.Text = "סיסמה חלשה מדי.";
+                    lblMessage.Text = "הסיסמה חייבת להכיל לפחות 4 תווים.";
                     return;
                 }
 
+                // בדיקת התאמה בין שדות הסיסמה
+                if (TxtPassword.Text != TxtConfirmPassword.Text)
+                {
+                    lblMessage.Text = "הסיסמאות אינן תואמות.";
+                    return;
+                }
+
+                // בדיקה אם המייל כבר רשום במערכת
                 var users = UserDAL.Get();
                 if (users.Exists(u => u.Email.Equals(TxtEmail.Text.Trim(), StringComparison.OrdinalIgnoreCase)))
                 {
                     lblMessage.Text = "כתובת מייל כבר קיימת.";
                     return;
                 }
+
+                // יצירת אובייקט משתמש חדש
                 User newUser = new User()
                 {
+                    UserId = -1,
                     Name = TxtName.Text,
                     Email = TxtEmail.Text,
                     Phone = TxtPhone.Text,
                     Adress = TxtAdress.Text,
                     JoinDate = DateTime.Now,
-                    UserPass = HashPassword(TxtPassword.Text)
+                    UserPass = TxtPassword.Text.Trim(),
+                    IsAdmin = false
                 };
 
+                // שמירה במסד נתונים
                 UserDAL.Save(newUser);
+
+                // הפניה לדף התחברות לאחר הרשמה מוצלחת
                 Response.Redirect("Login.aspx");
             }
             catch (Exception ex)
             {
                 lblMessage.Text = "שגיאה בהרשמה: " + ex.Message;
-            }
-        }
-
-        private string HashPassword(string password)
-        {
-            using (SHA256 sha = SHA256.Create())
-            {
-                byte[] bytes = Encoding.UTF8.GetBytes(password);
-                byte[] hash = sha.ComputeHash(bytes);
-                return BitConverter.ToString(hash).Replace("-", "").ToLower();
             }
         }
     }

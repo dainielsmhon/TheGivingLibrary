@@ -179,7 +179,8 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="LogOut.aspx">
+                  <a class="nav-link pl-3" href="../LogOut.aspx">
+
                     <span class="ml-1 item-text">התנתק</span>
                   </a>
                 </li>

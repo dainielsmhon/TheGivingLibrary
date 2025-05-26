@@ -6,7 +6,11 @@ namespace Library
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // ניקוי כל נתוני הסשן
             Session.Clear();
+            Session.Abandon();
+
+            // ניתוב לדף התחברות
             Response.Redirect("Login.aspx");
         }
     }

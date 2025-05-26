@@ -54,7 +54,8 @@ namespace Library
                 if (u.IsAdmin)
                     Response.Redirect("LibraryAdmin/Default.aspx"); // אם המנהל נכנס
                 else
-                    Response.Redirect("User/Default.aspx"); // אם משתמש רגיל נכנס
+                    Response.Redirect("LibraryUser/Default.aspx"); // אם משתמש רגיל נכנס
+
             }
             else
             {

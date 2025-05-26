@@ -3,16 +3,39 @@
   "WorkspaceRootPath": "C:\\Users\\danie\\Downloads\\Library1\\Library\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\register.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\register.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\register.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\register.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\app_code\\dal\\userdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\app_code\\dal\\userdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\app_code\\bll\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\app_code\\bll\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_DANIE_DOWNLOADS_LIBRARY1_LIBRARY_LIBRARY_APP_DATA_LIBRARY.MDF/True/SqlTable/dbo.t_Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryuser\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryuser\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|c:\\users\\danie\\downloads\\library1\\library\\library\\register.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\register.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\libraryuser\\usermaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\libraryuser\\usermaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|C:\\Users\\danie\\Downloads\\Library1\\Library\\library\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A02D437C-C5F5-448D-8987-1D8D59A28BBC}|Library\\Library.csproj|solutionrelative:library\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +45,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,6 +54,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "UserDAL.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\App_Code\\DAL\\UserDAL.cs",
+              "RelativeDocumentMoniker": "Library\\App_Code\\DAL\\UserDAL.cs",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\App_Code\\DAL\\UserDAL.cs",
+              "RelativeToolTip": "Library\\App_Code\\DAL\\UserDAL.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAiwGsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T17:04:29.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\App_Code\\BLL\\User.cs",
+              "RelativeDocumentMoniker": "Library\\App_Code\\BLL\\User.cs",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\App_Code\\BLL\\User.cs",
+              "RelativeToolTip": "Library\\App_Code\\BLL\\User.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAA8wDAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T17:04:14.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Register.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\Register.aspx.cs",
+              "RelativeDocumentMoniker": "Library\\Register.aspx.cs",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\Register.aspx.cs",
+              "RelativeToolTip": "Library\\Register.aspx.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAqwE0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T16:57:49.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Register.aspx",
               "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\Register.aspx",
               "RelativeDocumentMoniker": "Library\\Register.aspx",
@@ -38,25 +100,60 @@
               "RelativeToolTip": "Library\\Register.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-19T18:21:13.862Z",
+              "WhenOpened": "2025-05-26T16:51:32.205Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "LogIn.aspx.cs",
               "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LogIn.aspx.cs",
               "RelativeDocumentMoniker": "Library\\LogIn.aspx.cs",
               "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LogIn.aspx.cs",
               "RelativeToolTip": "Library\\LogIn.aspx.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAqwEIAAAAAAAAA",
+              "ViewState": "AQIAACUAAAAAAAAAAAAiwEMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T18:18:41.913Z",
+              "WhenOpened": "2025-05-26T16:28:56.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserMaster.Master",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryUser\\UserMaster.Master",
+              "RelativeDocumentMoniker": "Library\\LibraryUser\\UserMaster.Master",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryUser\\UserMaster.Master",
+              "RelativeToolTip": "Library\\LibraryUser\\UserMaster.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-05-26T16:27:53.437Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryUser\\Default.aspx",
+              "RelativeDocumentMoniker": "Library\\LibraryUser\\Default.aspx",
+              "ToolTip": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LibraryUser\\Default.aspx",
+              "RelativeToolTip": "Library\\LibraryUser\\Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-05-26T16:26:23.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dbo.t_Users [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_DANIE_DOWNLOADS_LIBRARY1_LIBRARY_LIBRARY_APP_DATA_LIBRARY.MDF/True/SqlTable/dbo.t_Users.sql",
+              "ToolTip": "dbo.t_Users [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-19T18:32:48.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "LogIn.aspx",
               "DocumentMoniker": "C:\\Users\\danie\\Downloads\\Library1\\Library\\Library\\LogIn.aspx",
               "RelativeDocumentMoniker": "Library\\LogIn.aspx",
@@ -64,8 +161,7 @@
               "RelativeToolTip": "Library\\LogIn.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-18T18:10:30.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T16:22:08.01Z"
             }
           ]
         }
