@@ -26,7 +26,9 @@ namespace DAL
                         BookId = int.Parse(Dt.Rows[0]["BookId"] + ""),
                         Quantity = int.Parse(Dt.Rows[0]["Quantity"] + ""),
                         OrderDate = DateTime.Parse(Dt.Rows[0]["OrderDate"] + ""),
-                        Status = int.Parse(Dt.Rows[0]["Status"] + "")
+                        Status = int.Parse(Dt.Rows[0]["Status"] + ""),
+                        UserId = int.Parse(Dt.Rows[0]["UserId"] + "")
+
                     };
                 }
             }
@@ -69,6 +71,45 @@ namespace DAL
             }
             return LstTmp;
         }
+        public static List<Order> GetByUser(int userId)
+        {
+            List<Order> LstTmp = new List<Order>();
+            using (DbContext Db = new DbContext())
+            {
+                string Sql = $"SELECT * FROM T_Orders WHERE UserId = {userId} ORDER BY OrderId DESC";
+                DataTable Dt = Db.Execute(Sql);
+
+                for (int i = 0; i < Dt.Rows.Count; i++)
+                {
+                    Order Tmp = new Order();
+
+                    Tmp.OrderId = int.Parse(Dt.Rows[i]["OrderId"] + "");
+                    Tmp.SupplierId = int.Parse(Dt.Rows[i]["SupplierId"] + "");
+                    Tmp.BookId = int.Parse(Dt.Rows[i]["BookId"] + "");
+                    Tmp.Quantity = int.Parse(Dt.Rows[i]["Quantity"] + "");
+                    Tmp.OrderDate = DateTime.Parse(Dt.Rows[i]["OrderDate"] + "");
+                    Tmp.Status = int.Parse(Dt.Rows[i]["Status"] + "");
+                    Tmp.UserId = int.Parse(Dt.Rows[i]["UserId"] + "");
+
+                    Supplier Sup = Supplier.GetById(Tmp.SupplierId);
+                    if (Sup != null)
+                    {
+                        Tmp.SupplierName = Sup.SupplierName;
+                    }
+
+                    Book Bk = Book.GetById(Tmp.BookId);
+                    if (Bk != null)
+                    {
+                        Tmp.BookName = Bk.BookName;
+                    }
+
+                    LstTmp.Add(Tmp);
+                }
+            }
+
+            return LstTmp;
+        }
+
 
         // מחיקת הזמנה לפי מזהה
         public static int Delete(int id)
@@ -89,8 +130,8 @@ namespace DAL
                 string Sql = "";
                 if (Tmp.OrderId == -1)
                 {
-                    Sql = $"INSERT INTO T_Orders (SupplierId, BookId, Quantity, OrderDate, Status) VALUES ";
-                    Sql += $"({Tmp.SupplierId}, {Tmp.BookId}, {Tmp.Quantity}, '{Tmp.OrderDate:yyyy-MM-dd}', {Tmp.Status})";
+                    Sql = $"INSERT INTO T_Orders (SupplierId, BookId, Quantity, OrderDate, Status, UserId) VALUES ";
+                    Sql += $"({Tmp.SupplierId}, {Tmp.BookId}, {Tmp.Quantity}, '{Tmp.OrderDate:yyyy-MM-dd}', {Tmp.Status}, {Tmp.UserId})";
                 }
                 else
                 {
@@ -99,8 +140,10 @@ namespace DAL
                     Sql += $"BookId = {Tmp.BookId}, ";
                     Sql += $"Quantity = {Tmp.Quantity}, ";
                     Sql += $"OrderDate = '{Tmp.OrderDate:yyyy-MM-dd}', ";
-                    Sql += $"Status = {Tmp.Status} ";
+                    Sql += $"Status = {Tmp.Status}, ";
+                    Sql += $"UserId = {Tmp.UserId} "; 
                     Sql += $"WHERE OrderId = {Tmp.OrderId}";
+
                 }
 
                 RecCount = Db.ExecuteNonQuery(Sql);

@@ -38,6 +38,39 @@ namespace DAL
             }
             return Tmp;
         }
+        // פונקציה שמחזירה את רשימת ההשאלות של יוזר מסוים לפי מזהה המשתמש
+        public static List<Borrow> GetByUser(int userId)
+        {
+            List<Borrow> LstTmp = new List<Borrow>(); // יצירת רשימה ריקה
+
+            using (DbContext db = new DbContext())
+            {
+                // שאילתה שמחזירה את ההשאלות של המשתמש לפי מזהה
+                string sql = $"SELECT * FROM T_Borrows WHERE UserId = {userId}";
+                DataTable Dt = db.Execute(sql); // שליפת הנתונים מהטבלה
+
+                for (int i = 0; i < Dt.Rows.Count; i++)
+                {
+                    Borrow Tmp = new Borrow()
+                    {
+                        BorrowId = int.Parse(Dt.Rows[i]["BorrowId"] + ""),
+                        BookId = int.Parse(Dt.Rows[i]["BookId"] + ""),
+                        BookName = Dt.Rows[i]["BookName"] + "",
+                        UserId = int.Parse(Dt.Rows[i]["UserId"] + ""),
+                        BorrowDate = DateTime.Parse(Dt.Rows[i]["BorrowDate"] + ""),
+                        ReturnDatePlan = DateTime.Parse(Dt.Rows[i]["ReturnDatePlan"] + ""),
+                        ActualReturnDate = DateTime.Parse(Dt.Rows[i]["ActualReturnDate"] + ""),
+                        Status = int.Parse(Dt.Rows[i]["Status"] + ""),
+                        Notse = Dt.Rows[i]["Notse"] + ""
+                    };
+                    LstTmp.Add(Tmp); // הוספת ההשאלה לרשימה
+                }
+            }
+
+            return LstTmp; // החזרת הרשימה
+        }
+
+
 
         // שליפת כל השאלות
         public static List<Borrow> Get()

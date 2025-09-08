@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using BLL;
 using DAL;
+using DATA;
 
 namespace BLL
 {
@@ -15,6 +16,8 @@ namespace BLL
         public DateTime OrderDate { get; set; }
         public string SupplierName { get; set; }
         public string BookName { get; set; }
+        public int UserId { get; set; } 
+
 
 
 
@@ -44,5 +47,12 @@ namespace BLL
         {
             return OrderDAL.Delete(id);  
         }
+        // שליפת הזמנות של משתמש מסוים בלבד לפי מזהה המשתמש
+        public static List<Order> GetByUser(int userId)
+        {
+            return OrderDAL.GetByUser(userId);
+        }
     }
+       
+    
 }

@@ -37,6 +37,11 @@ namespace BLL
         {
             return BorrowDAL.Delete(id);
         }
+        public static List<Borrow> GetByUser(int userId)
+        {
+            return BorrowDAL.GetByUser(userId);
+        }
+
     }
 }
     

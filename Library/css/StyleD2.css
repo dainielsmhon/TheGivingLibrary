@@ -424,3 +424,44 @@ body.user .logo-role-label::after {
     content: "משתמש רגיל";
     color: #4caf50;
 }
+body.user {
+    --main-color: #2196f3;
+    --sidebar-bg: rgba(255, 255, 255, 0.85);
+    --sidebar-text: #0d47a1;
+    --hover-color: #1976d2;
+    --link-color: #1565c0;
+    --heading-color: #0d47a1;
+}
+
+.sidebar-left {
+    background-color: var(--sidebar-bg);
+}
+
+    .sidebar-left .nav-link {
+        color: var(--sidebar-text);
+    }
+
+        .sidebar-left .nav-link:hover {
+            color: var(--hover-color);
+        }
+
+    .sidebar-left .nav-item.active > .nav-link {
+        color: var(--main-color);
+        font-weight: bold;
+    }
+
+.nav-heading span {
+    color: var(--heading-color);
+}
+/* יישר את כפתור הצ'אט והפופאפ שמאלה */
+#chatbase-bubble {
+    right: auto !important;
+    left: 20px !important;
+}
+
+.chatbase-popup {
+    right: auto !important;
+    left: 80px !important;
+    direction: rtl;
+    text-align: right;
+}

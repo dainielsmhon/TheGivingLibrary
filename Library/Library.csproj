@@ -272,6 +272,7 @@
     <Content Include="js\tinycolor-min.js" />
     <Content Include="js\topojson.min.js" />
     <Content Include="js\uppy.min.js" />
+    <Content Include="LibraryAdmin\DataTables.aspx" />
     <Content Include="LibraryUser\AddBorrow.aspx" />
     <Content Include="LibraryUser\AddOrder.aspx" />
     <Content Include="LibraryUser\AddReturn.aspx" />
@@ -598,6 +599,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryAdmin\DataTables.aspx.cs">
+      <DependentUpon>DataTables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibraryAdmin\DataTables.aspx.designer.cs">
+      <DependentUpon>DataTables.aspx</DependentUpon>
     </Compile>
     <Compile Include="LibraryUser\AddBorrow.aspx.cs">
       <DependentUpon>AddBorrow.aspx</DependentUpon>

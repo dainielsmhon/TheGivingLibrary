@@ -20,15 +20,31 @@ namespace Library.LibraryUser
 
         private void FillData()
         {
-            var borrows = Borrow.Get(); // טוען את כל ההשאלות
+            // שליפת מזהה המשתמש והאם הוא מנהל מתוך ה־Session
+            int userId = Convert.ToInt32(Session["UserId"]);
+            bool isAdmin = Convert.ToBoolean(Session["IsAdmin"]);
 
-            // הוספתי את המיון לפי סטטוס (מושאל קודם)
+            List<Borrow> borrows;
+
+            if (isAdmin)
+            {
+                // אם המשתמש הוא מנהל – טוען את כל ההשאלות
+                borrows = Borrow.Get();
+            }
+            else
+            {
+                // אחרת – טוען רק את ההשאלות של המשתמש המחובר
+                borrows = Borrow.GetByUser(userId);
+            }
+
+            // מיון לפי סטטוס ולאחר מכן לפי תאריך השאלה
             var sortedBorrows = borrows
-                .OrderBy(b => b.Status)  // מיון לפי סטטוס (0 - מושאל קודם)
-                .ThenBy(b => b.BorrowDate)  // מיון נוסף לפי תאריך השאלה
+                .OrderBy(b => b.Status)
+                .ThenBy(b => b.BorrowDate)
                 .ToList();
 
-            Repeater1.DataSource = sortedBorrows;  // תוודא שהשימוש הוא בשם נכון של הרפיטר
+            // הצגת הנתונים בטבלה
+            Repeater1.DataSource = sortedBorrows;
             Repeater1.DataBind();
         }
 

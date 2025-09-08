@@ -44,8 +44,8 @@
                                     CommandName="Receive"
                                     CommandArgument='<%# Eval("OrderId") %>'
                                     CssClass="btn btn-sm btn-success"
-                                    Visible='<%# Convert.ToInt32(Eval("Status")) == 0 %>'
-                                    Text="קבל" />
+                                    Text="קבל"
+                                    Visible='<%# Convert.ToInt32(Eval("Status")) == 0 && Convert.ToBoolean(Session["IsAdmin"]) %>' />
                             </td>
                         </tr>
                     </ItemTemplate>
