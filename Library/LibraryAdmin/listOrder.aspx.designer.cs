@@ -11,7 +11,7 @@ namespace Library.LibraryAdmin
 {
 
 
-    public partial class listOrder
+    public partial class ListOrder
     {
 
         /// <summary>

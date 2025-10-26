@@ -212,8 +212,6 @@
     <Content Include="assets\products\p2.jpg" />
     <Content Include="assets\products\p3.jpg" />
     <Content Include="assets\products\p4.jpg" />
-    <Content Include="CheckEmail.aspx" />
-    <Content Include="Cities.aspx" />
     <Content Include="css\apexcharts.css" />
     <Content Include="css\app-dark.css" />
     <Content Include="css\app-light.css" />
@@ -583,20 +581,6 @@
     <Compile Include="App_Code\DbContext.cs" />
     <Compile Include="App_Code\GlobFunc.cs" />
     <Content Include="App_Code\MongoContext.cs" />
-    <Compile Include="CheckEmail.aspx.cs">
-      <DependentUpon>CheckEmail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CheckEmail.aspx.designer.cs">
-      <DependentUpon>CheckEmail.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Cities.aspx.cs">
-      <DependentUpon>Cities.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Cities.aspx.designer.cs">
-      <DependentUpon>Cities.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

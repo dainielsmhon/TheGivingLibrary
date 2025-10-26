@@ -1,6 +1,7 @@
-﻿using System;
-using DAL;
-using BLL;
+﻿using BLL;
+using System;
+using System.Collections.Generic;
+using System.Web.UI;
 
 namespace Library
 {
@@ -20,53 +21,57 @@ namespace Library
                     return;
                 }
 
-                // בדיקת תקינות אימייל
+                // בדיקת תקינות מייל בסיסית
                 if (!TxtEmail.Text.Contains("@") || !TxtEmail.Text.Contains("."))
                 {
                     lblMessage.Text = "כתובת מייל לא תקינה.";
                     return;
                 }
 
-                // בדיקה שאורך הסיסמה לפחות 4 תווים
+                // בדיקת אורך סיסמה
                 if (TxtPassword.Text.Length < 4)
                 {
                     lblMessage.Text = "הסיסמה חייבת להכיל לפחות 4 תווים.";
                     return;
                 }
 
-                // בדיקת התאמה בין שדות הסיסמה
-                if (TxtPassword.Text != TxtConfirmPassword.Text)
+                // בדיקה ששתי הסיסמאות תואמות
+                if (TxtPassword.Text.Trim() != TxtConfirmPassword.Text.Trim())
                 {
                     lblMessage.Text = "הסיסמאות אינן תואמות.";
                     return;
                 }
 
-                // בדיקה אם המייל כבר רשום במערכת
-                var users = UserDAL.Get();
-                if (users.Exists(u => u.Email.Equals(TxtEmail.Text.Trim(), StringComparison.OrdinalIgnoreCase)))
+                // בדיקה אם כתובת המייל כבר קיימת במערכת (לפי מה שלמדת)
+                int userId = BLL.User.CheckUserByEmail(TxtEmail.Text.Trim());
+
+                if (userId != -1)
                 {
-                    lblMessage.Text = "כתובת מייל כבר קיימת.";
+                    // מייל כבר רשום
+                    lblMessage.Text = "כתובת מייל כבר קיימת במערכת.";
                     return;
                 }
 
-                // יצירת אובייקט משתמש חדש
+                // יצירת משתמש חדש
                 User newUser = new User()
                 {
-                    UserId = -1,
-                    Name = TxtName.Text,
-                    Email = TxtEmail.Text,
-                    Phone = TxtPhone.Text,
-                    Adress = TxtAdress.Text,
+                    UserId = -1, // חדש
+                    Name = TxtName.Text.Trim(),
+                    Email = TxtEmail.Text.Trim(),
+                    Phone = TxtPhone.Text.Trim(),
+                    Adress = TxtAdress.Text.Trim(),
                     JoinDate = DateTime.Now,
                     UserPass = TxtPassword.Text.Trim(),
                     IsAdmin = false
                 };
 
-                // שמירה במסד נתונים
-                UserDAL.Save(newUser);
+                // שמירה בבסיס הנתונים
+                newUser.Save();
 
-                // הפניה לדף התחברות לאחר הרשמה מוצלחת
-                Response.Redirect("Login.aspx");
+                // הודעת הצלחה + מעבר לדף התחברות
+                lblMessage.Text = "נרשמת בהצלחה! מועבר לדף ההתחברות...";
+                ScriptManager.RegisterStartupScript(this, GetType(), "redirectLogin",
+                    "setTimeout(function(){ window.location='Login.aspx'; }, 2000);", true);
             }
             catch (Exception ex)
             {
@@ -75,3 +80,4 @@ namespace Library
         }
     }
 }
+

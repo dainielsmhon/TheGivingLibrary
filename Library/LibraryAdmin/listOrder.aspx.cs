@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Library.LibraryAdmin
 {
-    public partial class listOrder : System.Web.UI.Page
+    public partial class ListOrder : System.Web.UI.Page
     {
         
      

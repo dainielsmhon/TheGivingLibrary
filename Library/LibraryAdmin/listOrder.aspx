@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LibraryAdmin/NewAdminMaster.Master" AutoEventWireup="true" CodeBehind="listOrder.aspx.cs" Inherits="Library.LibraryAdmin.listOrder" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LibraryAdmin/NewAdminMaster.Master" AutoEventWireup="true" CodeBehind="listOrder.aspx.cs" Inherits="Library.LibraryAdmin.ListOrder" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
                 <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
 <link rel="stylesheet" href="css/StyleD2.css">

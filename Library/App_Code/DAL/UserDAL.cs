@@ -35,6 +35,22 @@ namespace DAL
             }
             return Tmp;
         }
+        public static int CheckUserByEmail(string email)
+        {
+            int userId = -1;
+            using (DbContext Db = new DbContext())
+            {
+                string Sql = $"SELECT * FROM T_Users WHERE Email = N'{email}'";
+                DataTable Dt = Db.Execute(Sql);
+
+                if (Dt.Rows.Count > 0)
+                {
+                    userId = int.Parse(Dt.Rows[0]["UserId"] + "");
+                }
+            }
+            return userId;
+        }
+
 
         public static List<User> Get()
         {

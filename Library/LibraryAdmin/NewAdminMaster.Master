@@ -220,9 +220,9 @@
                 <li class="nav-item">
                   <a class="nav-link pl-3" href="AddBook.aspx"><span class="ml-1 item-text">הוספת ספר חדש</span></a>
                 </li>
-                <li class="nav-item">
+               <%-- <li class="nav-item">
                   <a class="nav-link pl-3" href="ListBook.aspx"><span class="ml-1 item-text">רשימת ספרים במלאי</span></a>
-                </li>
+                </li>--%>
               </ul>
             </li>          
 

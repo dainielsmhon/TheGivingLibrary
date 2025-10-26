@@ -1,107 +1,116 @@
 ﻿using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BLL; // ייבוא של מחלקות BLL כמו ספרים וספקים
+using BLL; // ייבוא שכבת הלוגיקה העסקית (עסקים, ספרים, ספקים וכו')
 
 namespace Library.LibraryAdmin
 {
     public partial class AddOrder : System.Web.UI.Page
     {
-        
-        // פעולה טוענת את הספקים ל-DropDownList
+        // פעולה שמופעלת כאשר הדף נטען
         protected void Page_Load(object sender, EventArgs e)
         {
+            // נבדוק האם זו הפעם הראשונה שנטען הדף
             if (!IsPostBack)
             {
-                FillData(); // קריאה לפונקציה אתחול הנתונים
+                FillSuppliers(); // קריאה לפונקציה שתמלא את רשימת הספקים
             }
         }
 
-        // פונקציה שמביאה את כל הנתונים הנדרשים (כמו ספקים וספרים)
-        public void FillData()
+        // פונקציה שמביאה את כל הספקים ומציגה אותם ברשימה הנפתחת
+        public void FillSuppliers()
         {
-            // קריאה לפונקציה ב-BLL לשליפת הספקים
+            // שליפת כל הספקים ממחלקת Supplier שב־BLL
             var suppliers = Supplier.Get();
+
+            // הגדרת מקור הנתונים לרשימת הספקים
             ddlSuppliers.DataSource = suppliers;
-            ddlSuppliers.DataTextField = "SupplierName"; // הצגת שם הספק
-            ddlSuppliers.DataValueField = "SupplierId"; // שימוש ב-SupplierId כערך ברשימה
+            ddlSuppliers.DataTextField = "SupplierName"; // מה יוצג למשתמש
+            ddlSuppliers.DataValueField = "SupplierId";  // הערך הפנימי
             ddlSuppliers.DataBind();
 
-            // נוסיף אפשרות לברירת מחדל שלא תוכל לבחור ספק עם ID = 0
+            // הוספת אפשרות ברירת מחדל – "בחר ספק"
             ddlSuppliers.Items.Insert(0, new ListItem("בחר ספק", "0"));
         }
 
-        // פעולה שמתבצעת כאשר בוחרים ספק מהרשימה
+        // פעולה שמתרחשת כאשר המשתמש משנה ספק
         protected void ddlSuppliers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // בדיקה שהספק לא שווה ל-0 (בחר ספק)
+            // נבדוק שהמשתמש לא בחר את ברירת המחדל (0)
             if (ddlSuppliers.SelectedValue != "0")
             {
-                int selectedSupplierId = int.Parse(ddlSuppliers.SelectedValue);  // מקבלים את ה-SupplierId שנבחר
+                // המרה למספר של מזהה הספק
+                int supplierId = int.Parse(ddlSuppliers.SelectedValue);
 
-                // קריאה לפונקציה ב-BLL לשליפת הספרים של הספק הספציפי
-                var books = Book.GetBooksBySupplier(selectedSupplierId);
+                // שליפת הספרים ששייכים לספק שנבחר
+                var books = Book.GetBooksBySupplier(supplierId);
 
+                // הצגת רשימת הספרים בתיבה
                 ddlBooks.DataSource = books;
-                ddlBooks.DataTextField = "BookName";  // הצגת שם הספר
-                ddlBooks.DataValueField = "BookId";  // שימוש ב-BookId כערך ברשימה
+                ddlBooks.DataTextField = "BookName"; // מציג שם ספר
+                ddlBooks.DataValueField = "BookId";  // שומר מזהה ספר
                 ddlBooks.DataBind();
 
-                // נוסיף אפשרות לברירת מחדל שלא תוכל לבחור ספר עם ID = 0
+                // הוספת אפשרות ברירת מחדל גם לרשימת הספרים
                 ddlBooks.Items.Insert(0, new ListItem("בחר ספר", "0"));
             }
         }
 
-        // שמירה של ההזמנה
+        // פעולה שמתבצעת כאשר לוחצים על הכפתור "שמור"
         protected void BtnSave_Click(object sender, EventArgs e)
         {
-            // יצירת אובייקט הזמנה
-            var order = new Order
+            // בדיקה שהמשתמש בחר ספק וספר
+            if (ddlSuppliers.SelectedValue == "0" || ddlBooks.SelectedValue == "0")
             {
-                SupplierId = int.Parse(ddlSuppliers.SelectedValue),
-                BookId = int.Parse(ddlBooks.SelectedValue),
-                Quantity = int.Parse(TxtQuantity.Text),
-                OrderDate = DateTime.Now,
-                OrderId = -1
-            };
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('יש לבחור ספק וספר לפני ביצוע ההזמנה.');", true);
+                return;
+            }
 
-            // שמירה דרך BLL
+            // יצירת אובייקט הזמנה חדש
+            var order = new Order();
+            order.OrderId = -1; // זהות זמנית עד שמתווסף למסד הנתונים
+            order.SupplierId = int.Parse(ddlSuppliers.SelectedValue); // מזהה ספק
+            order.BookId = int.Parse(ddlBooks.SelectedValue);         // מזהה ספר
+            order.Quantity = int.Parse(TxtQuantity.Text);             // כמות
+            order.OrderDate = DateTime.Now;                           // תאריך הזמנה
+            order.Status = 0;                                         // סטטוס "לא התקבלה"
+            order.UserId = 100; // משתמש קיים בטבלת T_Users
+
+            // שמירה דרך שכבת הלוגיקה (BLL)
             order.Save();
 
+            // שליחת מייל לספק שנבחר
+            Supplier supplier = Supplier.GetById(order.SupplierId); // שליפת פרטי הספק
 
-            // שלב חדש – שליחת מייל לספק
-            Supplier supplier = Supplier.GetById(order.SupplierId); // שליפת הספק לפי ID
             if (supplier != null && !string.IsNullOrEmpty(supplier.SEmail))
             {
-                System.Diagnostics.Debug.WriteLine("כתובת מייל של הספק: " + supplier.SEmail);
-
-
+                // יצירת נושא ותוכן המייל
                 string subject = "הזמנה חדשה ממערכת הספרייה";
-                string body = $"<h2>שלום {supplier.SupplierName},</h2><p>הוזנה עבורך הזמנה חדשה.</p><p>מספר ספר: {order.BookId}<br/>כמות: {order.Quantity}<br/>תאריך: {order.OrderDate.ToShortDateString()}</p>";
+                string body = $"<h2>שלום {supplier.SupplierName},</h2>" +
+                              $"<p>נוצרה עבורך הזמנה חדשה.</p>" +
+                              $"<p>מספר ספר: {order.BookId}<br/>כמות: {order.Quantity}<br/>תאריך: {order.OrderDate.ToShortDateString()}</p>";
 
-                bool sent = GlobFunc.SendEmail(supplier.SEmail, subject, body); // שליחת המייל ומעקב הצלחה
+                // קריאה לפונקציה ששולחת את המייל בפועל
+                bool sent = GlobFunc.SendEmail(supplier.SEmail, subject, body);
 
+                // בדיקה האם המייל נשלח בהצלחה
                 if (sent)
                 {
-                    // מייל נשלח - הצג פופאפ והמשך להפניה
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('המייל נשלח בהצלחה לכתובת: {supplier.SEmail}'); window.location='ListOrder.aspx';", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                        $"alert('ההזמנה נשמרה ונשלח מייל לספק: {supplier.SEmail}'); window.location='ListOrder.aspx';", true);
                 }
                 else
                 {
-                    // מייל נכשל - הודעה מתאימה
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('שגיאה בשליחת המייל לספק. בדוק את כתובת המייל או קובץ הלוג.'); window.location='ListOrder.aspx';", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                        "alert('ההזמנה נשמרה אך המייל לא נשלח. בדוק את ההגדרות.'); window.location='ListOrder.aspx';", true);
                 }
             }
             else
             {
-                // אין כתובת מייל - הצג הודעה
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('לא נמצאה כתובת מייל עבור הספק. ההזמנה נשמרה, אך לא נשלח מייל.'); window.location='ListOrder.aspx';", true);
+                // אם אין כתובת מייל לספק
+                ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                    "alert('ההזמנה נשמרה אך לא נשלח מייל מאחר ואין כתובת לספק.'); window.location='ListOrder.aspx';", true);
             }
-
-
-
-            // אפשר להוסיף הפניה לדף רשימת ההזמנות לאחר השמירה
-            //Response.Redirect("ListOrder.aspx");
         }
     }
 }

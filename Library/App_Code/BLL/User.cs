@@ -43,7 +43,12 @@ namespace BLL
         {
             return UserDAL.Delete(id);
         }
-       
+        public static int CheckUserByEmail(string email)
+        {
+            return UserDAL.CheckUserByEmail(email);
+        }
+
+
 
 
     }
