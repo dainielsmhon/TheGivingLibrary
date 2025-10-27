@@ -214,7 +214,7 @@
         </ul>
       </li>
 
-      <!-- רכישה -->
+<%--      <!-- רכישה -->
       <li class="nav-item dropdown">
         <a href="#purchaseMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
           <i class="fe fe-shopping-cart fe-16"></i>
@@ -230,7 +230,7 @@
         </ul>
       </li>
     </ul>
-  </nav>
+  </nav>--%>
 </aside>
 
       <main role="main" class="main-content">

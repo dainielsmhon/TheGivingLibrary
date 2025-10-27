@@ -1,21 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LibraryUser/UserMaster.Master" AutoEventWireup="true" CodeBehind="ListBorrow.aspx.cs" Inherits="Library.LibraryUser.ListBorrow" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <!-- טעינת עיצובי DataTables -->
     <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="css/StyleD2.css">
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainCnt" runat="server">
-    <h1>רשימת השאלות </h1>
+    <h1>רשימת השאלות</h1>
+
     <div class="card-body">
-        <!-- table -->
+        <!-- טבלת הנתונים -->
         <table class="table datatables" id="MainTbl">
             <thead>
                 <tr>
                     <th>מספר השאלה</th>
                     <th>מספר ספר</th>
                     <th>שם ספר</th>
-                    <th>תז משאיל</th>
+                    <th>ת"ז משאיל</th>
                     <th>תאריך השאלה</th>
                     <th>תאריך חזרה משוער</th>
                     <th>תאריך החזרה בפועל</th>
@@ -24,7 +26,9 @@
                     <th>פעולות</th>
                 </tr>
             </thead>
+
             <tbody>
+                <!-- רפיטר המציג את רשימת ההשאלות -->
                 <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="rptBorrow_ItemCommand">
                     <ItemTemplate>
                         <tr class='<%# "status-" + Eval("Status") %>'>
@@ -36,14 +40,23 @@
                             <td><%# Eval("ReturnDatePlan") %></td>
                             <td><%# Eval("ActualReturnDate") %></td>
 
-                            <%-- שינוי טקסט סטטוס: 0 = מושאל, 1 = הוחזר --%>
+                            <!-- שינוי טקסט הסטטוס -->
                             <td><%# (Convert.ToInt32(Eval("Status")) == 0 ? "מושאל" : "הוחזר") %></td>
 
                             <td><%# Eval("Notse") %></td>
+
+                            <!-- עמודת פעולות -->
                             <td>
-                                <%# (Convert.ToInt32(Eval("Status")) == 0) ? 
-                                    "<a id='LinkAddReturn' runat='server' class='btn btn-sm btn-primary' href='#' CommandName='Return' CommandArgument='" + Eval("BorrowId") + "'>החזרה</a>" : "" 
-                                %>
+                                <!-- כפתור החזרה מוצג רק אם הספר מושאל (Status = 0) -->
+                                <asp:LinkButton 
+                                    ID="btnReturn" 
+                                    runat="server"
+                                    CssClass="btn btn-sm btn-primary"
+                                    CommandName="Return"
+                                    CommandArgument='<%# Eval("BorrowId") %>'
+                                    Text="החזרה"
+                                    Visible='<%# Convert.ToInt32(Eval("Status")) == 0 %>'>
+                                </asp:LinkButton>
                             </td>
                         </tr>
                     </ItemTemplate>
@@ -56,6 +69,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="FooterCnt" runat="server">
     <script src="js/jquery.dataTables.min.js"></script>
     <script src="js/dataTables.bootstrap4.min.js"></script>
+
     <script>
         var ans = true;
         function ComfirmDelete() {
@@ -68,7 +82,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="UnderFooter" runat="server">
     <script>
         $(document).ready(function () {
-            // מאתחל כל טבלה עם ID אם היא לא מאותחלת עדיין כ־DataTable
+            // הפעלת DataTables עם תמיכה בעברית
             $("table[id]").each(function () {
                 const tbl = $(this);
 
@@ -83,6 +97,7 @@
                     });
                 }
 
+                // הוספת רקע שקוף לטבלה אם לא קיים
                 if (!tbl.hasClass("table-bg")) {
                     tbl.addClass("table-bg");
                 }

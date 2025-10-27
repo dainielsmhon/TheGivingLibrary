@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Web.UI;
 using BLL;
 
@@ -28,7 +27,7 @@ namespace Library
             if (userId != -1)
             {
                 // נמצא משתמש קיים
-                ViewState["UserId"] = userId;  // שומר את המספר שלו
+                ViewState["UserId"] = userId;  // שומר את המספר שלו זמנית
                 pnlError.Visible = false;
                 pnlPassword.Visible = true;    // מציג את שדה הסיסמה
             }
@@ -39,7 +38,7 @@ namespace Library
                 lblError.Text = "המייל לא קיים במערכת. אנא צור משתמש חדש.";
                 pnlPassword.Visible = false;
 
-                // מציע מעבר להרשמה
+                // מציע מעבר להרשמה אוטומטית
                 ScriptManager.RegisterStartupScript(this, GetType(), "redirectToRegister",
                     "setTimeout(function(){ window.location='Register.aspx'; }, 2500);", true);
             }
@@ -56,17 +55,21 @@ namespace Library
 
             if (u != null && u.UserPass == txtPassword.Text.Trim())
             {
-                // סיסמה נכונה → שמירה ב־Session
+                // סיסמה נכונה → שמירה מלאה של כל הנתונים ב־Session
                 Session["User"] = u;
+                Session["UserId"] = u.UserId;
+                Session["UserName"] = u.Name;
+                Session["IsAdmin"] = u.IsAdmin;
 
+                // ניתוב לפי סוג המשתמש
                 if (u.IsAdmin)
-                    Response.Redirect("LibraryAdmin/Default.aspx"); // אם מנהל
+                    Response.Redirect("LibraryAdmin/Default.aspx"); // דף מנהל
                 else
-                    Response.Redirect("LibraryUser/Default.aspx");  // אם משתמש רגיל
+                    Response.Redirect("LibraryUser/Default.aspx");  // דף משתמש רגיל
             }
             else
             {
-                // סיסמה לא נכונה
+                // סיסמה שגויה
                 pnlError.Visible = true;
                 lblError.Text = "סיסמה שגויה. נסה שוב.";
             }

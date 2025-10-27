@@ -2,78 +2,66 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Library.LibraryUser
 {
+    // 🔹 מחלקה זו אחראית על הצגת רשימת ההשאלות של המשתמש המחובר
+    // כל משתמש רואה אך ורק את ההשאלות שלו, לפי מזהה המשתמש השמור ב-Session
     public partial class ListBorrow : System.Web.UI.Page
     {
+        // פעולה זו נטענת בכל פעם שהדף נפתח
         protected void Page_Load(object sender, EventArgs e)
         {
+            // נבצע טעינה של הנתונים רק בפעם הראשונה
+            // (כדי שלא יתרחש ריענון מיותר בכל postback)
             if (!IsPostBack)
             {
-                FillData();  // טוען את רשימת הספרים
+                FillData(); // קריאה לפונקציה שטוענת את רשימת ההשאלות מהמסד
             }
         }
 
+        // -------------------------------------------------------
+        // פונקציה שאחראית לשלוף מהמסד רק את ההשאלות של המשתמש המחובר
+        // -------------------------------------------------------
         private void FillData()
         {
-            // שליפת מזהה המשתמש והאם הוא מנהל מתוך ה־Session
+            // נוודא שקיים משתמש מחובר — אחרת נחזיר אותו לדף התחברות
+            if (Session["UserId"] == null)
+            {
+                Response.Redirect("~/Login.aspx");
+                return;
+            }
+
+            // שליפת מזהה המשתמש מתוך ה-Session
             int userId = Convert.ToInt32(Session["UserId"]);
-            bool isAdmin = Convert.ToBoolean(Session["IsAdmin"]);
 
-            List<Borrow> borrows;
+            // שליפה של כל ההשאלות של המשתמש לפי מזהה
+            var borrows = Borrow.GetByUser(userId)
+                .OrderBy(b => b.Status)          // מיון לפי סטטוס (מושאל קודם)
+                .ThenBy(b => b.BorrowDate)       // מיון משני לפי תאריך השאלה
+                .ToList();                       // הפיכת הנתונים לרשימה מלאה
 
-            if (isAdmin)
-            {
-                // אם המשתמש הוא מנהל – טוען את כל ההשאלות
-                borrows = Borrow.Get();
-            }
-            else
-            {
-                // אחרת – טוען רק את ההשאלות של המשתמש המחובר
-                borrows = Borrow.GetByUser(userId);
-            }
-
-            // מיון לפי סטטוס ולאחר מכן לפי תאריך השאלה
-            var sortedBorrows = borrows
-                .OrderBy(b => b.Status)
-                .ThenBy(b => b.BorrowDate)
-                .ToList();
-
-            // הצגת הנתונים בטבלה
-            Repeater1.DataSource = sortedBorrows;
+            // חיבור הנתונים לרפיטר שעל הדף
+            Repeater1.DataSource = borrows;
             Repeater1.DataBind();
         }
 
-        // טיפול בכפתור "החזרה" שמשנה את הסטטוס של הספר להחזרה
+        // -------------------------------------------------------
+        // פעולה זו מופעלת כאשר לוחצים על כפתור בתוך ה-Repeater
+        // (במקרה שלנו – כפתור "החזרה")
+        // -------------------------------------------------------
         protected void rptBorrow_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+            // נבדוק אם הכפתור שנלחץ הוא מסוג "Return"
             if (e.CommandName == "Return")
             {
+                // נקבל את מזהה ההשאלה מתוך ה-CommandArgument של הכפתור
                 int borrowId = Convert.ToInt32(e.CommandArgument);
-                var borrow = Borrow.GetById(borrowId);
 
-                if (borrow != null)
-                {
-                    // הגנה כפולה - אל תחזיר ספר פעמיים!
-                    if (borrow.Status == 1)
-                        return;
-
-                    borrow.Status = 1;  // משנה את הסטטוס להחזרה
-                    borrow.Save();
-
-                    var book = Book.GetById(borrow.BookId);
-                    if (book != null)
-                    {
-                        book.AvailableQuantity++;  // עדכון הכמות הזמינה של הספר
-                        book.Save();
-                    }
-
-                    FillData();  // טוען מחדש את הנתונים
-                }
+                // הפניה לדף AddReturn.aspx עם מזהה ההשאלה ב-URL
+                Response.Redirect($"AddReturn.aspx?BorrowId={borrowId}");
             }
         }
     }

@@ -49,7 +49,7 @@
         <td>
             <%# (Convert.ToInt32(Eval("AvailableQuantity")) > 0) ? 
                 "<a id='LinkAddBorrow' runat='server' class='btn btn-sm btn-primary' href='AddBorrow.aspx?BookId=" + Eval("BookId") + "'>השאלה</a>" : "" %>
-            <a class="dropdown-item" href="AddBook.aspx?BookId=<%# Eval("BookId") %>">עריכה</a>
+<%--            <a class="dropdown-item" href="AddBook.aspx?BookId=<%# Eval("BookId") %>">עריכה</a>--%>
         </td>
     </tr>
 </ItemTemplate>
